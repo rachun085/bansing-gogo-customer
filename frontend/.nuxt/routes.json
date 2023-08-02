@@ -1,0 +1,1444 @@
+[
+  {
+    "name": "email-confirmation",
+    "path": "/email-confirmation",
+    "component": "/Users/supx/bansing-fund/frontend/pages/email-confirmation.vue",
+    "chunkName": "pages/email-confirmation",
+    "_name": "_4d6d5e20"
+  },
+  {
+    "name": "blog-blog-detail",
+    "path": "/blog/blog-detail",
+    "component": "/Users/supx/bansing-fund/frontend/pages/blog/blog-detail.vue",
+    "chunkName": "pages/blog/blog-detail",
+    "_name": "_44781fce"
+  },
+  {
+    "name": "blog-blog-leftsidebar",
+    "path": "/blog/blog-leftsidebar",
+    "component": "/Users/supx/bansing-fund/frontend/pages/blog/blog-leftsidebar.vue",
+    "chunkName": "pages/blog/blog-leftsidebar",
+    "_name": "_92862446"
+  },
+  {
+    "name": "blog-blog-nosidebar",
+    "path": "/blog/blog-nosidebar",
+    "component": "/Users/supx/bansing-fund/frontend/pages/blog/blog-nosidebar.vue",
+    "chunkName": "pages/blog/blog-nosidebar",
+    "_name": "_c3b5483a"
+  },
+  {
+    "name": "blog-blog-rightsidebar",
+    "path": "/blog/blog-rightsidebar",
+    "component": "/Users/supx/bansing-fund/frontend/pages/blog/blog-rightsidebar.vue",
+    "chunkName": "pages/blog/blog-rightsidebar",
+    "_name": "_3b3913f0"
+  },
+  {
+    "name": "collection-full-width",
+    "path": "/collection/full-width",
+    "component": "/Users/supx/bansing-fund/frontend/pages/collection/full-width.vue",
+    "chunkName": "pages/collection/full-width",
+    "_name": "_29a23f5f"
+  },
+  {
+    "name": "collection-list-view",
+    "path": "/collection/list-view",
+    "component": "/Users/supx/bansing-fund/frontend/pages/collection/list-view.vue",
+    "chunkName": "pages/collection/list-view",
+    "_name": "_1f2c6f6d"
+  },
+  {
+    "name": "collection-metro",
+    "path": "/collection/metro",
+    "component": "/Users/supx/bansing-fund/frontend/pages/collection/metro.vue",
+    "chunkName": "pages/collection/metro",
+    "_name": "_491587dc"
+  },
+  {
+    "name": "collection-no-sidebar",
+    "path": "/collection/no-sidebar",
+    "component": "/Users/supx/bansing-fund/frontend/pages/collection/no-sidebar.vue",
+    "chunkName": "pages/collection/no-sidebar",
+    "_name": "_340cecb2"
+  },
+  {
+    "name": "collection-right-sidebar",
+    "path": "/collection/right-sidebar",
+    "component": "/Users/supx/bansing-fund/frontend/pages/collection/right-sidebar.vue",
+    "chunkName": "pages/collection/right-sidebar",
+    "_name": "_f32c4cb8"
+  },
+  {
+    "name": "collection-sidebar-popup",
+    "path": "/collection/sidebar-popup",
+    "component": "/Users/supx/bansing-fund/frontend/pages/collection/sidebar-popup.vue",
+    "chunkName": "pages/collection/sidebar-popup",
+    "_name": "_2148f7f4"
+  },
+  {
+    "name": "collection-six-grid",
+    "path": "/collection/six-grid",
+    "component": "/Users/supx/bansing-fund/frontend/pages/collection/six-grid.vue",
+    "chunkName": "pages/collection/six-grid",
+    "_name": "_b9daf230"
+  },
+  {
+    "name": "collection-three-grid",
+    "path": "/collection/three-grid",
+    "component": "/Users/supx/bansing-fund/frontend/pages/collection/three-grid.vue",
+    "chunkName": "pages/collection/three-grid",
+    "_name": "_1924cdec"
+  },
+  {
+    "name": "page-404",
+    "path": "/page/404",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/404.vue",
+    "chunkName": "pages/page/404",
+    "_name": "_5eb7bd62"
+  },
+  {
+    "name": "page-about",
+    "path": "/page/about",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/about.vue",
+    "chunkName": "pages/page/about",
+    "_name": "_d8886e92"
+  },
+  {
+    "name": "page-collection",
+    "path": "/page/collection",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/collection.vue",
+    "chunkName": "pages/page/collection",
+    "_name": "_731d8738"
+  },
+  {
+    "name": "page-coming-soon",
+    "path": "/page/coming-soon",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/coming-soon.vue",
+    "chunkName": "pages/page/coming-soon",
+    "_name": "_3d81211e"
+  },
+  {
+    "name": "page-confirm-payment",
+    "path": "/page/confirm-payment",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/confirm-payment.vue",
+    "chunkName": "pages/page/confirm-payment",
+    "_name": "_0b731ca3"
+  },
+  {
+    "name": "page-faq",
+    "path": "/page/faq",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/faq.vue",
+    "chunkName": "pages/page/faq",
+    "_name": "_0aa86040"
+  },
+  {
+    "name": "page-lookbook",
+    "path": "/page/lookbook",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/lookbook.vue",
+    "chunkName": "pages/page/lookbook",
+    "_name": "_173f164e"
+  },
+  {
+    "name": "page-order-success",
+    "path": "/page/order-success",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/order-success.vue",
+    "chunkName": "pages/page/order-success",
+    "_name": "_a3bec7a4"
+  },
+  {
+    "name": "page-review",
+    "path": "/page/review",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/review.vue",
+    "chunkName": "pages/page/review",
+    "_name": "_2013df1e"
+  },
+  {
+    "name": "page-search",
+    "path": "/page/search",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/search.vue",
+    "chunkName": "pages/page/search",
+    "_name": "_66bfa56e"
+  },
+  {
+    "name": "page-typography",
+    "path": "/page/typography",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/typography.vue",
+    "chunkName": "pages/page/typography",
+    "_name": "_3e925275"
+  },
+  {
+    "name": "product-bundle-product",
+    "path": "/product/bundle-product",
+    "component": "/Users/supx/bansing-fund/frontend/pages/product/bundle-product.vue",
+    "chunkName": "pages/product/bundle-product",
+    "_name": "_aa2d0424"
+  },
+  {
+    "name": "product-four-image",
+    "path": "/product/four-image",
+    "component": "/Users/supx/bansing-fund/frontend/pages/product/four-image.vue",
+    "chunkName": "pages/product/four-image",
+    "_name": "_aac3d384"
+  },
+  {
+    "name": "shop-bags",
+    "path": "/shop/bags",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/bags/index.vue",
+    "chunkName": "pages/shop/bags/index",
+    "_name": "_2e9489ad"
+  },
+  {
+    "name": "shop-beauty",
+    "path": "/shop/beauty",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/beauty/index.vue",
+    "chunkName": "pages/shop/beauty/index",
+    "_name": "_3fe2d484"
+  },
+  {
+    "name": "shop-electronics-1",
+    "path": "/shop/electronics-1",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/electronics-1/index.vue",
+    "chunkName": "pages/shop/electronics-1/index",
+    "_name": "_cc0c40a2"
+  },
+  {
+    "name": "shop-fashion",
+    "path": "/shop/fashion",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/fashion/index.vue",
+    "chunkName": "pages/shop/fashion/index",
+    "_name": "_4e765a8c"
+  },
+  {
+    "name": "shop-fashion-2",
+    "path": "/shop/fashion-2",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/fashion-2/index.vue",
+    "chunkName": "pages/shop/fashion-2/index",
+    "_name": "_27cc3db1"
+  },
+  {
+    "name": "shop-fashion-3",
+    "path": "/shop/fashion-3",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/fashion-3/index.vue",
+    "chunkName": "pages/shop/fashion-3/index",
+    "_name": "_869e1f1c"
+  },
+  {
+    "name": "shop-flower",
+    "path": "/shop/flower",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/flower/index.vue",
+    "chunkName": "pages/shop/flower/index",
+    "_name": "_e6591646"
+  },
+  {
+    "name": "shop-furniture",
+    "path": "/shop/furniture",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/furniture/index.vue",
+    "chunkName": "pages/shop/furniture/index",
+    "_name": "_274e8a06"
+  },
+  {
+    "name": "shop-gym",
+    "path": "/shop/gym",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/gym/index.vue",
+    "chunkName": "pages/shop/gym/index",
+    "_name": "_61aaa962"
+  },
+  {
+    "name": "shop-jewellery",
+    "path": "/shop/jewellery",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/jewellery/index.vue",
+    "chunkName": "pages/shop/jewellery/index",
+    "_name": "_725bf917"
+  },
+  {
+    "name": "shop-kids",
+    "path": "/shop/kids",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/kids/index.vue",
+    "chunkName": "pages/shop/kids/index",
+    "_name": "_7c63e42f"
+  },
+  {
+    "name": "shop-pets",
+    "path": "/shop/pets",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/pets/index.vue",
+    "chunkName": "pages/shop/pets/index",
+    "_name": "_b271df94"
+  },
+  {
+    "name": "shop-shoes",
+    "path": "/shop/shoes",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/shoes/index.vue",
+    "chunkName": "pages/shop/shoes/index",
+    "_name": "_459cc408"
+  },
+  {
+    "name": "shop-tools",
+    "path": "/shop/tools",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/tools/index.vue",
+    "chunkName": "pages/shop/tools/index",
+    "_name": "_cc0ddda2"
+  },
+  {
+    "name": "shop-vegetables",
+    "path": "/shop/vegetables",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/vegetables/index.vue",
+    "chunkName": "pages/shop/vegetables/index",
+    "_name": "_5d3d8a98"
+  },
+  {
+    "name": "shop-watch",
+    "path": "/shop/watch",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/watch/index.vue",
+    "chunkName": "pages/shop/watch/index",
+    "_name": "_4ae6eb23"
+  },
+  {
+    "name": "blog-widgets-blog-list",
+    "path": "/blog/widgets/blog-list",
+    "component": "/Users/supx/bansing-fund/frontend/pages/blog/widgets/blog-list.vue",
+    "chunkName": "pages/blog/widgets/blog-list",
+    "_name": "_5ce0a586"
+  },
+  {
+    "name": "blog-widgets-blog-sidebar",
+    "path": "/blog/widgets/blog-sidebar",
+    "component": "/Users/supx/bansing-fund/frontend/pages/blog/widgets/blog-sidebar.vue",
+    "chunkName": "pages/blog/widgets/blog-sidebar",
+    "_name": "_2917aca4"
+  },
+  {
+    "name": "page-account-cart",
+    "path": "/page/account/cart",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/account/cart.vue",
+    "chunkName": "pages/page/account/cart",
+    "_name": "_0141c3f0"
+  },
+  {
+    "name": "page-account-checkout",
+    "path": "/page/account/checkout",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/account/checkout.vue",
+    "chunkName": "pages/page/account/checkout",
+    "_name": "_0051c52e"
+  },
+  {
+    "name": "page-account-contact",
+    "path": "/page/account/contact",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/account/contact.vue",
+    "chunkName": "pages/page/account/contact",
+    "_name": "_5226a468"
+  },
+  {
+    "name": "page-account-dashboard",
+    "path": "/page/account/dashboard",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/account/dashboard.vue",
+    "chunkName": "pages/page/account/dashboard",
+    "_name": "_538964dc"
+  },
+  {
+    "name": "page-account-forget-password",
+    "path": "/page/account/forget-password",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/account/forget-password.vue",
+    "chunkName": "pages/page/account/forget-password",
+    "_name": "_50f46143"
+  },
+  {
+    "name": "page-account-login",
+    "path": "/page/account/login",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/account/login.vue",
+    "chunkName": "pages/page/account/login",
+    "_name": "_7bf84f31"
+  },
+  {
+    "name": "page-account-login-firebase",
+    "path": "/page/account/login-firebase",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/account/login-firebase.vue",
+    "chunkName": "pages/page/account/login-firebase",
+    "_name": "_02b6ed53"
+  },
+  {
+    "name": "page-account-profile",
+    "path": "/page/account/profile",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/account/profile.vue",
+    "chunkName": "pages/page/account/profile",
+    "_name": "_5a4e1d71"
+  },
+  {
+    "name": "page-account-register",
+    "path": "/page/account/register",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/account/register.vue",
+    "chunkName": "pages/page/account/register",
+    "_name": "_4358b00b"
+  },
+  {
+    "name": "page-account-wishlist",
+    "path": "/page/account/wishlist",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/account/wishlist.vue",
+    "chunkName": "pages/page/account/wishlist",
+    "_name": "_d0f853a6"
+  },
+  {
+    "name": "page-compare-compare-1",
+    "path": "/page/compare/compare-1",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/compare/compare-1.vue",
+    "chunkName": "pages/page/compare/compare-1",
+    "_name": "_a97f746e"
+  },
+  {
+    "name": "page-compare-compare-2",
+    "path": "/page/compare/compare-2",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/compare/compare-2.vue",
+    "chunkName": "pages/page/compare/compare-2",
+    "_name": "_a963456c"
+  },
+  {
+    "name": "page-element-banner",
+    "path": "/page/element/banner",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/element/banner.vue",
+    "chunkName": "pages/page/element/banner",
+    "_name": "_0a2f0be5"
+  },
+  {
+    "name": "page-element-category",
+    "path": "/page/element/category",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/element/category.vue",
+    "chunkName": "pages/page/element/category",
+    "_name": "_6ac18c77"
+  },
+  {
+    "name": "page-element-collection-banner",
+    "path": "/page/element/collection-banner",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/element/collection-banner.vue",
+    "chunkName": "pages/page/element/collection-banner",
+    "_name": "_af2068dc"
+  },
+  {
+    "name": "page-element-home-slider",
+    "path": "/page/element/home-slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/element/home-slider.vue",
+    "chunkName": "pages/page/element/home-slider",
+    "_name": "_10427526"
+  },
+  {
+    "name": "page-element-logo-slider",
+    "path": "/page/element/logo-slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/element/logo-slider.vue",
+    "chunkName": "pages/page/element/logo-slider",
+    "_name": "_2d8e6cda"
+  },
+  {
+    "name": "page-element-multi-slider",
+    "path": "/page/element/multi-slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/element/multi-slider.vue",
+    "chunkName": "pages/page/element/multi-slider",
+    "_name": "_569de124"
+  },
+  {
+    "name": "page-element-product-slider",
+    "path": "/page/element/product-slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/element/product-slider.vue",
+    "chunkName": "pages/page/element/product-slider",
+    "_name": "_5e45f5b8"
+  },
+  {
+    "name": "page-element-product-tabs",
+    "path": "/page/element/product-tabs",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/element/product-tabs.vue",
+    "chunkName": "pages/page/element/product-tabs",
+    "_name": "_382abd95"
+  },
+  {
+    "name": "page-element-service",
+    "path": "/page/element/service",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/element/service.vue",
+    "chunkName": "pages/page/element/service",
+    "_name": "_3d09cacc"
+  },
+  {
+    "name": "page-portfolio-masonary-fullwidth",
+    "path": "/page/portfolio/masonary-fullwidth",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/portfolio/masonary-fullwidth.vue",
+    "chunkName": "pages/page/portfolio/masonary-fullwidth",
+    "_name": "_d51c46be"
+  },
+  {
+    "name": "page-portfolio-mesonary-grid-2",
+    "path": "/page/portfolio/mesonary-grid-2",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/portfolio/mesonary-grid-2.vue",
+    "chunkName": "pages/page/portfolio/mesonary-grid-2",
+    "_name": "_116f594d"
+  },
+  {
+    "name": "page-portfolio-mesonary-grid-3",
+    "path": "/page/portfolio/mesonary-grid-3",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/portfolio/mesonary-grid-3.vue",
+    "chunkName": "pages/page/portfolio/mesonary-grid-3",
+    "_name": "_117d70ce"
+  },
+  {
+    "name": "page-portfolio-mesonary-grid-4",
+    "path": "/page/portfolio/mesonary-grid-4",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/portfolio/mesonary-grid-4.vue",
+    "chunkName": "pages/page/portfolio/mesonary-grid-4",
+    "_name": "_118b884f"
+  },
+  {
+    "name": "page-portfolio-portfolio-2-col",
+    "path": "/page/portfolio/portfolio-2-col",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/portfolio/portfolio-2-col.vue",
+    "chunkName": "pages/page/portfolio/portfolio-2-col",
+    "_name": "_d075b7fa"
+  },
+  {
+    "name": "page-portfolio-portfolio-3-col",
+    "path": "/page/portfolio/portfolio-3-col",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/portfolio/portfolio-3-col.vue",
+    "chunkName": "pages/page/portfolio/portfolio-3-col",
+    "_name": "_2c099304"
+  },
+  {
+    "name": "page-portfolio-portfolio-4-col",
+    "path": "/page/portfolio/portfolio-4-col",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/portfolio/portfolio-4-col.vue",
+    "chunkName": "pages/page/portfolio/portfolio-4-col",
+    "_name": "_7f63fbf6"
+  },
+  {
+    "name": "product-sidebar-no-sidebar",
+    "path": "/product/sidebar/no-sidebar",
+    "component": "/Users/supx/bansing-fund/frontend/pages/product/sidebar/no-sidebar.vue",
+    "chunkName": "pages/product/sidebar/no-sidebar",
+    "_name": "_4c62dead"
+  },
+  {
+    "name": "product-sidebar-right-sidebar",
+    "path": "/product/sidebar/right-sidebar",
+    "component": "/Users/supx/bansing-fund/frontend/pages/product/sidebar/right-sidebar.vue",
+    "chunkName": "pages/product/sidebar/right-sidebar",
+    "_name": "_42071ede"
+  },
+  {
+    "name": "product-three-column-thumbnail-bottom",
+    "path": "/product/three-column/thumbnail-bottom",
+    "component": "/Users/supx/bansing-fund/frontend/pages/product/three-column/thumbnail-bottom.vue",
+    "chunkName": "pages/product/three-column/thumbnail-bottom",
+    "_name": "_62111f3c"
+  },
+  {
+    "name": "product-three-column-thumbnail-left",
+    "path": "/product/three-column/thumbnail-left",
+    "component": "/Users/supx/bansing-fund/frontend/pages/product/three-column/thumbnail-left.vue",
+    "chunkName": "pages/product/three-column/thumbnail-left",
+    "_name": "_00018158"
+  },
+  {
+    "name": "product-three-column-thumbnail-right",
+    "path": "/product/three-column/thumbnail-right",
+    "component": "/Users/supx/bansing-fund/frontend/pages/product/three-column/thumbnail-right.vue",
+    "chunkName": "pages/product/three-column/thumbnail-right",
+    "_name": "_3d73c39b"
+  },
+  {
+    "name": "product-thumbnail-image-image-outside",
+    "path": "/product/thumbnail-image/image-outside",
+    "component": "/Users/supx/bansing-fund/frontend/pages/product/thumbnail-image/image-outside.vue",
+    "chunkName": "pages/product/thumbnail-image/image-outside",
+    "_name": "_01639478"
+  },
+  {
+    "name": "product-thumbnail-image-left-image",
+    "path": "/product/thumbnail-image/left-image",
+    "component": "/Users/supx/bansing-fund/frontend/pages/product/thumbnail-image/left-image.vue",
+    "chunkName": "pages/product/thumbnail-image/left-image",
+    "_name": "_f55dcd58"
+  },
+  {
+    "name": "product-thumbnail-image-right-image",
+    "path": "/product/thumbnail-image/right-image",
+    "component": "/Users/supx/bansing-fund/frontend/pages/product/thumbnail-image/right-image.vue",
+    "chunkName": "pages/product/thumbnail-image/right-image",
+    "_name": "_8b89e08a"
+  },
+  {
+    "name": "page-account-auth-auth",
+    "path": "/page/account/auth/auth",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/account/auth/auth.js",
+    "chunkName": "pages/page/account/auth/auth",
+    "_name": "_78eae638"
+  },
+  {
+    "name": "shop-bags-components-banner",
+    "path": "/shop/bags/components/banner",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/bags/components/banner.vue",
+    "chunkName": "pages/shop/bags/components/banner",
+    "_name": "_77acfb20"
+  },
+  {
+    "name": "shop-bags-components-blog",
+    "path": "/shop/bags/components/blog",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/bags/components/blog.vue",
+    "chunkName": "pages/shop/bags/components/blog",
+    "_name": "_4b3ca796"
+  },
+  {
+    "name": "shop-bags-components-category",
+    "path": "/shop/bags/components/category",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/bags/components/category.vue",
+    "chunkName": "pages/shop/bags/components/category",
+    "_name": "_708098f2"
+  },
+  {
+    "name": "shop-bags-components-category2",
+    "path": "/shop/bags/components/category2",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/bags/components/category2.vue",
+    "chunkName": "pages/shop/bags/components/category2",
+    "_name": "_c0aba2a0"
+  },
+  {
+    "name": "shop-bags-components-categorytab",
+    "path": "/shop/bags/components/categorytab",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/bags/components/categorytab.vue",
+    "chunkName": "pages/shop/bags/components/categorytab",
+    "_name": "_5701e313"
+  },
+  {
+    "name": "shop-bags-components-instagram",
+    "path": "/shop/bags/components/instagram",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/bags/components/instagram.vue",
+    "chunkName": "pages/shop/bags/components/instagram",
+    "_name": "_77d1c46e"
+  },
+  {
+    "name": "shop-bags-components-productcategoryslider",
+    "path": "/shop/bags/components/productcategoryslider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/bags/components/productcategoryslider.vue",
+    "chunkName": "pages/shop/bags/components/productcategoryslider",
+    "_name": "_f3c6d26c"
+  },
+  {
+    "name": "shop-bags-components-productslider",
+    "path": "/shop/bags/components/productslider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/bags/components/productslider.vue",
+    "chunkName": "pages/shop/bags/components/productslider",
+    "_name": "_dd4afb68"
+  },
+  {
+    "name": "shop-bags-components-services",
+    "path": "/shop/bags/components/services",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/bags/components/services.vue",
+    "chunkName": "pages/shop/bags/components/services",
+    "_name": "_6d9a3c52"
+  },
+  {
+    "name": "shop-bags-components-slider",
+    "path": "/shop/bags/components/slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/bags/components/slider.vue",
+    "chunkName": "pages/shop/bags/components/slider",
+    "_name": "_11cbdb56"
+  },
+  {
+    "name": "shop-beauty-components-about",
+    "path": "/shop/beauty/components/about",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/beauty/components/about.vue",
+    "chunkName": "pages/shop/beauty/components/about",
+    "_name": "_2c8fc7d0"
+  },
+  {
+    "name": "shop-beauty-components-blog",
+    "path": "/shop/beauty/components/blog",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/beauty/components/blog.vue",
+    "chunkName": "pages/shop/beauty/components/blog",
+    "_name": "_f070db32"
+  },
+  {
+    "name": "shop-beauty-components-instagram",
+    "path": "/shop/beauty/components/instagram",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/beauty/components/instagram.vue",
+    "chunkName": "pages/shop/beauty/components/instagram",
+    "_name": "_342df43d"
+  },
+  {
+    "name": "shop-beauty-components-product-slider",
+    "path": "/shop/beauty/components/product-slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/beauty/components/product-slider.vue",
+    "chunkName": "pages/shop/beauty/components/product-slider",
+    "_name": "_404ed384"
+  },
+  {
+    "name": "shop-beauty-components-slider",
+    "path": "/shop/beauty/components/slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/beauty/components/slider.vue",
+    "chunkName": "pages/shop/beauty/components/slider",
+    "_name": "_3c958ce6"
+  },
+  {
+    "name": "shop-beauty-components-top-product-slider",
+    "path": "/shop/beauty/components/top-product-slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/beauty/components/top-product-slider.vue",
+    "chunkName": "pages/shop/beauty/components/top-product-slider",
+    "_name": "_3ce8907c"
+  },
+  {
+    "name": "shop-beauty-components-video-tutorial",
+    "path": "/shop/beauty/components/video-tutorial",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/beauty/components/video-tutorial.vue",
+    "chunkName": "pages/shop/beauty/components/video-tutorial",
+    "_name": "_4d2cebf5"
+  },
+  {
+    "name": "shop-electronics-1-components-collection_banner",
+    "path": "/shop/electronics-1/components/collection_banner",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/electronics-1/components/collection_banner.vue",
+    "chunkName": "pages/shop/electronics-1/components/collection_banner",
+    "_name": "_c060ea32"
+  },
+  {
+    "name": "shop-electronics-1-components-product_tab",
+    "path": "/shop/electronics-1/components/product_tab",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/electronics-1/components/product_tab.vue",
+    "chunkName": "pages/shop/electronics-1/components/product_tab",
+    "_name": "_39afdcbf"
+  },
+  {
+    "name": "shop-electronics-1-components-slider",
+    "path": "/shop/electronics-1/components/slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/electronics-1/components/slider.vue",
+    "chunkName": "pages/shop/electronics-1/components/slider",
+    "_name": "_54347557"
+  },
+  {
+    "name": "shop-fashion-2-components-banner",
+    "path": "/shop/fashion-2/components/banner",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/fashion-2/components/banner.vue",
+    "chunkName": "pages/shop/fashion-2/components/banner",
+    "_name": "_3102c924"
+  },
+  {
+    "name": "shop-fashion-2-components-collection",
+    "path": "/shop/fashion-2/components/collection",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/fashion-2/components/collection.vue",
+    "chunkName": "pages/shop/fashion-2/components/collection",
+    "_name": "_b6f780d4"
+  },
+  {
+    "name": "shop-fashion-2-components-collection-banner",
+    "path": "/shop/fashion-2/components/collection-banner",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/fashion-2/components/collection-banner.vue",
+    "chunkName": "pages/shop/fashion-2/components/collection-banner",
+    "_name": "_1b8ba0f3"
+  },
+  {
+    "name": "shop-fashion-2-components-instagram",
+    "path": "/shop/fashion-2/components/instagram",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/fashion-2/components/instagram.vue",
+    "chunkName": "pages/shop/fashion-2/components/instagram",
+    "_name": "_200307ea"
+  },
+  {
+    "name": "shop-fashion-2-components-product",
+    "path": "/shop/fashion-2/components/product",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/fashion-2/components/product.vue",
+    "chunkName": "pages/shop/fashion-2/components/product",
+    "_name": "_0ab60ea7"
+  },
+  {
+    "name": "shop-fashion-2-components-slider",
+    "path": "/shop/fashion-2/components/slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/fashion-2/components/slider.vue",
+    "chunkName": "pages/shop/fashion-2/components/slider",
+    "_name": "_9f203f4e"
+  },
+  {
+    "name": "shop-fashion-3-components-banner",
+    "path": "/shop/fashion-3/components/banner",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/fashion-3/components/banner.vue",
+    "chunkName": "pages/shop/fashion-3/components/banner",
+    "_name": "_7b346265"
+  },
+  {
+    "name": "shop-fashion-3-components-product_slider",
+    "path": "/shop/fashion-3/components/product_slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/fashion-3/components/product_slider.vue",
+    "chunkName": "pages/shop/fashion-3/components/product_slider",
+    "_name": "_2e77b5ea"
+  },
+  {
+    "name": "shop-fashion-3-components-product_tab",
+    "path": "/shop/fashion-3/components/product_tab",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/fashion-3/components/product_tab.vue",
+    "chunkName": "pages/shop/fashion-3/components/product_tab",
+    "_name": "_55cbeb48"
+  },
+  {
+    "name": "shop-fashion-3-components-slider",
+    "path": "/shop/fashion-3/components/slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/fashion-3/components/slider.vue",
+    "chunkName": "pages/shop/fashion-3/components/slider",
+    "_name": "_0abd0ccc"
+  },
+  {
+    "name": "shop-fashion-components-banner",
+    "path": "/shop/fashion/components/banner",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/fashion/components/banner.vue",
+    "chunkName": "pages/shop/fashion/components/banner",
+    "_name": "_0779757f"
+  },
+  {
+    "name": "shop-fashion-components-blog",
+    "path": "/shop/fashion/components/blog",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/fashion/components/blog.vue",
+    "chunkName": "pages/shop/fashion/components/blog",
+    "_name": "_4a522db5"
+  },
+  {
+    "name": "shop-fashion-components-collection_banner",
+    "path": "/shop/fashion/components/collection_banner",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/fashion/components/collection_banner.vue",
+    "chunkName": "pages/shop/fashion/components/collection_banner",
+    "_name": "_297bb12c"
+  },
+  {
+    "name": "shop-fashion-components-instagram",
+    "path": "/shop/fashion/components/instagram",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/fashion/components/instagram.vue",
+    "chunkName": "pages/shop/fashion/components/instagram",
+    "_name": "_7c2639af"
+  },
+  {
+    "name": "shop-fashion-components-logo_slider",
+    "path": "/shop/fashion/components/logo_slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/fashion/components/logo_slider.vue",
+    "chunkName": "pages/shop/fashion/components/logo_slider",
+    "_name": "_36d2dd32"
+  },
+  {
+    "name": "shop-fashion-components-product_slider",
+    "path": "/shop/fashion/components/product_slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/fashion/components/product_slider.vue",
+    "chunkName": "pages/shop/fashion/components/product_slider",
+    "_name": "_6e25e1f8"
+  },
+  {
+    "name": "shop-fashion-components-product_tab",
+    "path": "/shop/fashion/components/product_tab",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/fashion/components/product_tab.vue",
+    "chunkName": "pages/shop/fashion/components/product_tab",
+    "_name": "_773250fc"
+  },
+  {
+    "name": "shop-fashion-components-services",
+    "path": "/shop/fashion/components/services",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/fashion/components/services.vue",
+    "chunkName": "pages/shop/fashion/components/services",
+    "_name": "_3c319af1"
+  },
+  {
+    "name": "shop-fashion-components-slider",
+    "path": "/shop/fashion/components/slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/fashion/components/slider.vue",
+    "chunkName": "pages/shop/fashion/components/slider",
+    "_name": "_f232e698"
+  },
+  {
+    "name": "shop-flower-components-blog",
+    "path": "/shop/flower/components/blog",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/flower/components/blog.vue",
+    "chunkName": "pages/shop/flower/components/blog",
+    "_name": "_4ef356c6"
+  },
+  {
+    "name": "shop-flower-components-category_tab",
+    "path": "/shop/flower/components/category_tab",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/flower/components/category_tab.vue",
+    "chunkName": "pages/shop/flower/components/category_tab",
+    "_name": "_744beef8"
+  },
+  {
+    "name": "shop-flower-components-collection_banner",
+    "path": "/shop/flower/components/collection_banner",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/flower/components/collection_banner.vue",
+    "chunkName": "pages/shop/flower/components/collection_banner",
+    "_name": "_8d73fc0e"
+  },
+  {
+    "name": "shop-flower-components-instagram",
+    "path": "/shop/flower/components/instagram",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/flower/components/instagram.vue",
+    "chunkName": "pages/shop/flower/components/instagram",
+    "_name": "_47d9133e"
+  },
+  {
+    "name": "shop-flower-components-product_slider",
+    "path": "/shop/flower/components/product_slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/flower/components/product_slider.vue",
+    "chunkName": "pages/shop/flower/components/product_slider",
+    "_name": "_87c25256"
+  },
+  {
+    "name": "shop-flower-components-services",
+    "path": "/shop/flower/components/services",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/flower/components/services.vue",
+    "chunkName": "pages/shop/flower/components/services",
+    "_name": "_4b05d382"
+  },
+  {
+    "name": "shop-flower-components-slider",
+    "path": "/shop/flower/components/slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/flower/components/slider.vue",
+    "chunkName": "pages/shop/flower/components/slider",
+    "_name": "_303c94f6"
+  },
+  {
+    "name": "shop-flower-components-top_products",
+    "path": "/shop/flower/components/top_products",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/flower/components/top_products.vue",
+    "chunkName": "pages/shop/flower/components/top_products",
+    "_name": "_795d939c"
+  },
+  {
+    "name": "shop-furniture-components-blog",
+    "path": "/shop/furniture/components/blog",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/furniture/components/blog.vue",
+    "chunkName": "pages/shop/furniture/components/blog",
+    "_name": "_320e66a2"
+  },
+  {
+    "name": "shop-furniture-components-category_tab",
+    "path": "/shop/furniture/components/category_tab",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/furniture/components/category_tab.vue",
+    "chunkName": "pages/shop/furniture/components/category_tab",
+    "_name": "_70556be1"
+  },
+  {
+    "name": "shop-furniture-components-collection_banner",
+    "path": "/shop/furniture/components/collection_banner",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/furniture/components/collection_banner.vue",
+    "chunkName": "pages/shop/furniture/components/collection_banner",
+    "_name": "_01632eb0"
+  },
+  {
+    "name": "shop-furniture-components-parallax_banner",
+    "path": "/shop/furniture/components/parallax_banner",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/furniture/components/parallax_banner.vue",
+    "chunkName": "pages/shop/furniture/components/parallax_banner",
+    "_name": "_8ccb0e52"
+  },
+  {
+    "name": "shop-furniture-components-slider",
+    "path": "/shop/furniture/components/slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/furniture/components/slider.vue",
+    "chunkName": "pages/shop/furniture/components/slider",
+    "_name": "_d73d55a4"
+  },
+  {
+    "name": "shop-gym-components-blog",
+    "path": "/shop/gym/components/blog",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/gym/components/blog.vue",
+    "chunkName": "pages/shop/gym/components/blog",
+    "_name": "_5c16a6b8"
+  },
+  {
+    "name": "shop-gym-components-collection-banner",
+    "path": "/shop/gym/components/collection-banner",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/gym/components/collection-banner.vue",
+    "chunkName": "pages/shop/gym/components/collection-banner",
+    "_name": "_3d38c195"
+  },
+  {
+    "name": "shop-gym-components-instagram",
+    "path": "/shop/gym/components/instagram",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/gym/components/instagram.vue",
+    "chunkName": "pages/shop/gym/components/instagram",
+    "_name": "_6463ea8c"
+  },
+  {
+    "name": "shop-gym-components-logo-slider",
+    "path": "/shop/gym/components/logo-slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/gym/components/logo-slider.vue",
+    "chunkName": "pages/shop/gym/components/logo-slider",
+    "_name": "_1c863dc6"
+  },
+  {
+    "name": "shop-gym-components-product-list",
+    "path": "/shop/gym/components/product-list",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/gym/components/product-list.vue",
+    "chunkName": "pages/shop/gym/components/product-list",
+    "_name": "_7f03bed2"
+  },
+  {
+    "name": "shop-gym-components-slider",
+    "path": "/shop/gym/components/slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/gym/components/slider.vue",
+    "chunkName": "pages/shop/gym/components/slider",
+    "_name": "_3970d0f7"
+  },
+  {
+    "name": "shop-gym-components-top-collection",
+    "path": "/shop/gym/components/top-collection",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/gym/components/top-collection.vue",
+    "chunkName": "pages/shop/gym/components/top-collection",
+    "_name": "_c66f0ca8"
+  },
+  {
+    "name": "shop-jewellery-components-category",
+    "path": "/shop/jewellery/components/category",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/jewellery/components/category.vue",
+    "chunkName": "pages/shop/jewellery/components/category",
+    "_name": "_63f3c6dc"
+  },
+  {
+    "name": "shop-jewellery-components-instagram",
+    "path": "/shop/jewellery/components/instagram",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/jewellery/components/instagram.vue",
+    "chunkName": "pages/shop/jewellery/components/instagram",
+    "_name": "_1a775878"
+  },
+  {
+    "name": "shop-jewellery-components-parallax-banner",
+    "path": "/shop/jewellery/components/parallax-banner",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/jewellery/components/parallax-banner.vue",
+    "chunkName": "pages/shop/jewellery/components/parallax-banner",
+    "_name": "_c2623698"
+  },
+  {
+    "name": "shop-jewellery-components-product-slider",
+    "path": "/shop/jewellery/components/product-slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/jewellery/components/product-slider.vue",
+    "chunkName": "pages/shop/jewellery/components/product-slider",
+    "_name": "_323a105d"
+  },
+  {
+    "name": "shop-jewellery-components-product-tab",
+    "path": "/shop/jewellery/components/product-tab",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/jewellery/components/product-tab.vue",
+    "chunkName": "pages/shop/jewellery/components/product-tab",
+    "_name": "_7c28066e"
+  },
+  {
+    "name": "shop-jewellery-components-services",
+    "path": "/shop/jewellery/components/services",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/jewellery/components/services.vue",
+    "chunkName": "pages/shop/jewellery/components/services",
+    "_name": "_610d6a3c"
+  },
+  {
+    "name": "shop-jewellery-components-slider",
+    "path": "/shop/jewellery/components/slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/jewellery/components/slider.vue",
+    "chunkName": "pages/shop/jewellery/components/slider",
+    "_name": "_5a73b2bf"
+  },
+  {
+    "name": "shop-kids-components-collection_banner",
+    "path": "/shop/kids/components/collection_banner",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/kids/components/collection_banner.vue",
+    "chunkName": "pages/shop/kids/components/collection_banner",
+    "_name": "_a5af1332"
+  },
+  {
+    "name": "shop-kids-components-collection_slider",
+    "path": "/shop/kids/components/collection_slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/kids/components/collection_slider.vue",
+    "chunkName": "pages/shop/kids/components/collection_slider",
+    "_name": "_2c958d9c"
+  },
+  {
+    "name": "shop-kids-components-instagram",
+    "path": "/shop/kids/components/instagram",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/kids/components/instagram.vue",
+    "chunkName": "pages/shop/kids/components/instagram",
+    "_name": "_739454a8"
+  },
+  {
+    "name": "shop-kids-components-logo_slider",
+    "path": "/shop/kids/components/logo_slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/kids/components/logo_slider.vue",
+    "chunkName": "pages/shop/kids/components/logo_slider",
+    "_name": "_3b6b6def"
+  },
+  {
+    "name": "shop-kids-components-parallax_banner",
+    "path": "/shop/kids/components/parallax_banner",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/kids/components/parallax_banner.vue",
+    "chunkName": "pages/shop/kids/components/parallax_banner",
+    "_name": "_62ac424e"
+  },
+  {
+    "name": "shop-kids-components-product_slider",
+    "path": "/shop/kids/components/product_slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/kids/components/product_slider.vue",
+    "chunkName": "pages/shop/kids/components/product_slider",
+    "_name": "_c1bf2db2"
+  },
+  {
+    "name": "shop-kids-components-slider",
+    "path": "/shop/kids/components/slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/kids/components/slider.vue",
+    "chunkName": "pages/shop/kids/components/slider",
+    "_name": "_353bb9d7"
+  },
+  {
+    "name": "shop-pets-components-blog",
+    "path": "/shop/pets/components/blog",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/pets/components/blog.vue",
+    "chunkName": "pages/shop/pets/components/blog",
+    "_name": "_10e356df"
+  },
+  {
+    "name": "shop-pets-components-collection-banner",
+    "path": "/shop/pets/components/collection-banner",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/pets/components/collection-banner.vue",
+    "chunkName": "pages/shop/pets/components/collection-banner",
+    "_name": "_d1586e64"
+  },
+  {
+    "name": "shop-pets-components-logo-slider",
+    "path": "/shop/pets/components/logo-slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/pets/components/logo-slider.vue",
+    "chunkName": "pages/shop/pets/components/logo-slider",
+    "_name": "_21980716"
+  },
+  {
+    "name": "shop-pets-components-parallax-banner",
+    "path": "/shop/pets/components/parallax-banner",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/pets/components/parallax-banner.vue",
+    "chunkName": "pages/shop/pets/components/parallax-banner",
+    "_name": "_3939c6f5"
+  },
+  {
+    "name": "shop-pets-components-product-slider",
+    "path": "/shop/pets/components/product-slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/pets/components/product-slider.vue",
+    "chunkName": "pages/shop/pets/components/product-slider",
+    "_name": "_47b961fc"
+  },
+  {
+    "name": "shop-pets-components-slider",
+    "path": "/shop/pets/components/slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/pets/components/slider.vue",
+    "chunkName": "pages/shop/pets/components/slider",
+    "_name": "_245bd944"
+  },
+  {
+    "name": "shop-pets-components-top-collection",
+    "path": "/shop/pets/components/top-collection",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/pets/components/top-collection.vue",
+    "chunkName": "pages/shop/pets/components/top-collection",
+    "_name": "_a75f35da"
+  },
+  {
+    "name": "shop-shoes-components-about",
+    "path": "/shop/shoes/components/about",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/shoes/components/about.vue",
+    "chunkName": "pages/shop/shoes/components/about",
+    "_name": "_5a33bdcc"
+  },
+  {
+    "name": "shop-shoes-components-blog",
+    "path": "/shop/shoes/components/blog",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/shoes/components/blog.vue",
+    "chunkName": "pages/shop/shoes/components/blog",
+    "_name": "_2bb835b6"
+  },
+  {
+    "name": "shop-shoes-components-brand",
+    "path": "/shop/shoes/components/brand",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/shoes/components/brand.vue",
+    "chunkName": "pages/shop/shoes/components/brand",
+    "_name": "_185a87d8"
+  },
+  {
+    "name": "shop-shoes-components-category",
+    "path": "/shop/shoes/components/category",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/shoes/components/category.vue",
+    "chunkName": "pages/shop/shoes/components/category",
+    "_name": "_b13f11fe"
+  },
+  {
+    "name": "shop-shoes-components-category2",
+    "path": "/shop/shoes/components/category2",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/shoes/components/category2.vue",
+    "chunkName": "pages/shop/shoes/components/category2",
+    "_name": "_44c61281"
+  },
+  {
+    "name": "shop-shoes-components-category3",
+    "path": "/shop/shoes/components/category3",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/shoes/components/category3.vue",
+    "chunkName": "pages/shop/shoes/components/category3",
+    "_name": "_44d42a02"
+  },
+  {
+    "name": "shop-shoes-components-collectionbanner",
+    "path": "/shop/shoes/components/collectionbanner",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/shoes/components/collectionbanner.vue",
+    "chunkName": "pages/shop/shoes/components/collectionbanner",
+    "_name": "_70cd4f66"
+  },
+  {
+    "name": "shop-shoes-components-collectionslider",
+    "path": "/shop/shoes/components/collectionslider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/shoes/components/collectionslider.vue",
+    "chunkName": "pages/shop/shoes/components/collectionslider",
+    "_name": "_47066f82"
+  },
+  {
+    "name": "shop-shoes-components-collectiontab",
+    "path": "/shop/shoes/components/collectiontab",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/shoes/components/collectiontab.vue",
+    "chunkName": "pages/shop/shoes/components/collectiontab",
+    "_name": "_d1b11078"
+  },
+  {
+    "name": "shop-shoes-components-instagram",
+    "path": "/shop/shoes/components/instagram",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/shoes/components/instagram.vue",
+    "chunkName": "pages/shop/shoes/components/instagram",
+    "_name": "_1ceda83f"
+  },
+  {
+    "name": "shop-shoes-components-productSlider",
+    "path": "/shop/shoes/components/productSlider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/shoes/components/productSlider.vue",
+    "chunkName": "pages/shop/shoes/components/productSlider",
+    "_name": "_321ff1bd"
+  },
+  {
+    "name": "shop-shoes-components-service",
+    "path": "/shop/shoes/components/service",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/shoes/components/service.vue",
+    "chunkName": "pages/shop/shoes/components/service",
+    "_name": "_3efe6702"
+  },
+  {
+    "name": "shop-shoes-components-slider",
+    "path": "/shop/shoes/components/slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/shoes/components/slider.vue",
+    "chunkName": "pages/shop/shoes/components/slider",
+    "_name": "_79282824"
+  },
+  {
+    "name": "shop-tools-components-about",
+    "path": "/shop/tools/components/about",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/tools/components/about.vue",
+    "chunkName": "pages/shop/tools/components/about",
+    "_name": "_796cc007"
+  },
+  {
+    "name": "shop-tools-components-category",
+    "path": "/shop/tools/components/category",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/tools/components/category.vue",
+    "chunkName": "pages/shop/tools/components/category",
+    "_name": "_7358d4f4"
+  },
+  {
+    "name": "shop-tools-components-logo_slider",
+    "path": "/shop/tools/components/logo_slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/tools/components/logo_slider.vue",
+    "chunkName": "pages/shop/tools/components/logo_slider",
+    "_name": "_01943e22"
+  },
+  {
+    "name": "shop-tools-components-product-slider",
+    "path": "/shop/tools/components/product-slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/tools/components/product-slider.vue",
+    "chunkName": "pages/shop/tools/components/product-slider",
+    "_name": "_229ba716"
+  },
+  {
+    "name": "shop-tools-components-product-tab-slider",
+    "path": "/shop/tools/components/product-tab-slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/tools/components/product-tab-slider.vue",
+    "chunkName": "pages/shop/tools/components/product-tab-slider",
+    "_name": "_280a9bad"
+  },
+  {
+    "name": "shop-tools-components-select-vehical",
+    "path": "/shop/tools/components/select-vehical",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/tools/components/select-vehical.vue",
+    "chunkName": "pages/shop/tools/components/select-vehical",
+    "_name": "_37d6a403"
+  },
+  {
+    "name": "shop-tools-components-service",
+    "path": "/shop/tools/components/service",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/tools/components/service.vue",
+    "chunkName": "pages/shop/tools/components/service",
+    "_name": "_5e58feaf"
+  },
+  {
+    "name": "shop-tools-components-slider",
+    "path": "/shop/tools/components/slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/tools/components/slider.vue",
+    "chunkName": "pages/shop/tools/components/slider",
+    "_name": "_b9153252"
+  },
+  {
+    "name": "shop-vegetables-components-banner",
+    "path": "/shop/vegetables/components/banner",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/vegetables/components/banner.vue",
+    "chunkName": "pages/shop/vegetables/components/banner",
+    "_name": "_658d59a7"
+  },
+  {
+    "name": "shop-vegetables-components-blog",
+    "path": "/shop/vegetables/components/blog",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/vegetables/components/blog.vue",
+    "chunkName": "pages/shop/vegetables/components/blog",
+    "_name": "_10e0fbdd"
+  },
+  {
+    "name": "shop-vegetables-components-product_slider",
+    "path": "/shop/vegetables/components/product_slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/vegetables/components/product_slider.vue",
+    "chunkName": "pages/shop/vegetables/components/product_slider",
+    "_name": "_fce369a8"
+  },
+  {
+    "name": "shop-vegetables-components-services",
+    "path": "/shop/vegetables/components/services",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/vegetables/components/services.vue",
+    "chunkName": "pages/shop/vegetables/components/services",
+    "_name": "_64dd1519"
+  },
+  {
+    "name": "shop-vegetables-components-slider",
+    "path": "/shop/vegetables/components/slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/vegetables/components/slider.vue",
+    "chunkName": "pages/shop/vegetables/components/slider",
+    "_name": "_360b1e48"
+  },
+  {
+    "name": "shop-vegetables-components-special_products",
+    "path": "/shop/vegetables/components/special_products",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/vegetables/components/special_products.vue",
+    "chunkName": "pages/shop/vegetables/components/special_products",
+    "_name": "_1a9eede5"
+  },
+  {
+    "name": "shop-watch-components-blog",
+    "path": "/shop/watch/components/blog",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/watch/components/blog.vue",
+    "chunkName": "pages/shop/watch/components/blog",
+    "_name": "_1b97a4e8"
+  },
+  {
+    "name": "shop-watch-components-category",
+    "path": "/shop/watch/components/category",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/watch/components/category.vue",
+    "chunkName": "pages/shop/watch/components/category",
+    "_name": "_23b833e8"
+  },
+  {
+    "name": "shop-watch-components-categorytabs",
+    "path": "/shop/watch/components/categorytabs",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/watch/components/categorytabs.vue",
+    "chunkName": "pages/shop/watch/components/categorytabs",
+    "_name": "_544b5066"
+  },
+  {
+    "name": "shop-watch-components-collectionbanners",
+    "path": "/shop/watch/components/collectionbanners",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/watch/components/collectionbanners.vue",
+    "chunkName": "pages/shop/watch/components/collectionbanners",
+    "_name": "_021e296f"
+  },
+  {
+    "name": "shop-watch-components-instagram",
+    "path": "/shop/watch/components/instagram",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/watch/components/instagram.vue",
+    "chunkName": "pages/shop/watch/components/instagram",
+    "_name": "_2b8d8838"
+  },
+  {
+    "name": "shop-watch-components-logo_slider",
+    "path": "/shop/watch/components/logo_slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/watch/components/logo_slider.vue",
+    "chunkName": "pages/shop/watch/components/logo_slider",
+    "_name": "_acbea50a"
+  },
+  {
+    "name": "shop-watch-components-product_slider",
+    "path": "/shop/watch/components/product_slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/watch/components/product_slider.vue",
+    "chunkName": "pages/shop/watch/components/product_slider",
+    "_name": "_b4a323ca"
+  },
+  {
+    "name": "shop-watch-components-services",
+    "path": "/shop/watch/components/services",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/watch/components/services.vue",
+    "chunkName": "pages/shop/watch/components/services",
+    "_name": "_20d1d748"
+  },
+  {
+    "name": "shop-watch-components-slider",
+    "path": "/shop/watch/components/slider",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/watch/components/slider.vue",
+    "chunkName": "pages/shop/watch/components/slider",
+    "_name": "_83701a6a"
+  },
+  {
+    "name": "shop-watch-components-timer_banner",
+    "path": "/shop/watch/components/timer_banner",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/watch/components/timer_banner.vue",
+    "chunkName": "pages/shop/watch/components/timer_banner",
+    "_name": "_1195b750"
+  },
+  {
+    "name": "shop-watch-components-top_products",
+    "path": "/shop/watch/components/top_products",
+    "component": "/Users/supx/bansing-fund/frontend/pages/shop/watch/components/top_products.vue",
+    "chunkName": "pages/shop/watch/components/top_products",
+    "_name": "_0849e6f8"
+  },
+  {
+    "name": "collection-leftsidebar-id",
+    "path": "/collection/leftsidebar/:id?",
+    "component": "/Users/supx/bansing-fund/frontend/pages/collection/leftsidebar/_id.vue",
+    "chunkName": "pages/collection/leftsidebar/_id",
+    "_name": "_3678ff4e"
+  },
+  {
+    "name": "product-sidebar-id",
+    "path": "/product/sidebar/:id?",
+    "component": "/Users/supx/bansing-fund/frontend/pages/product/sidebar/_id.vue",
+    "chunkName": "pages/product/sidebar/_id",
+    "_name": "_3b7f9ba6"
+  },
+  {
+    "name": "company-companyName",
+    "path": "/company/:companyName",
+    "component": "/Users/supx/bansing-fund/frontend/pages/company/_companyName/index.vue",
+    "chunkName": "pages/company/_companyName/index",
+    "_name": "_12243db0"
+  },
+  {
+    "name": "company-companyName-event",
+    "path": "/company/:companyName?/:event",
+    "component": "/Users/supx/bansing-fund/frontend/pages/company/_companyName/_event/index.vue",
+    "chunkName": "pages/company/_companyName/_event/index",
+    "_name": "_c9aaf310"
+  },
+  {
+    "name": "company-companyName-event-components-header",
+    "path": "/company/:companyName?/:event/components/header",
+    "component": "/Users/supx/bansing-fund/frontend/pages/company/_companyName/_event/components/header.vue",
+    "chunkName": "pages/company/_companyName/_event/components/header",
+    "_name": "_7c6bea4c"
+  },
+  {
+    "name": "company-companyName-event-components-pdf-viewer",
+    "path": "/company/:companyName?/:event/components/pdf-viewer",
+    "component": "/Users/supx/bansing-fund/frontend/pages/company/_companyName/_event/components/pdf-viewer.vue",
+    "chunkName": "pages/company/_companyName/_event/components/pdf-viewer",
+    "_name": "_26d258e8"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/supx/bansing-fund/frontend/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_32868e98"
+  }
+]

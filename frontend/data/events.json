@@ -1,0 +1,121 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Sing Record กอดเขานานๆนะ #2",
+            "event_date": "2023-03-03",
+            "target_price": 200000,
+            "ownership": 10,
+            "price_per_ownership": 20000,
+            "short_description": "การสนับสนุน สิทธิ์ละ 40,000 บาท",
+            "description": "การสนับสนุน สิทธิ์ละ 40,000 บาท หลังจากการจัดงาน ท่าจะได้รับปันผลจากรายได้ 15% จากการจัดงาน หากท่านต้องการร่วมสนับสนุน ท่านสามารถกด 'ใบสัญญาการสนับสนุน' เพื่อทำสัญญาสนับสนุนในงานคอนเสิร์ตครั้งนี้",
+            "company_id": 1,
+            "url_name": "sing-record-kodkow-2",
+            "images": [
+                {
+                    "id": 1,
+                    "alt": "yellow",
+                    "src": "1.jpg"
+                },
+                {
+                    "id": 2,
+                    "alt": "yellow",
+                    "src": "1.jpg"
+                }
+            ],
+            "amount_registered_ownership": 3
+        },
+        {
+            "id": 2,
+            "name": "Sing Music #2",
+            "event_date": "2023-03-23",
+            "target_price": 185000,
+            "ownership": 10,
+            "price_per_ownership": 20000,
+            "description": "abc...df.df.df.ffff",
+            "company_id": 1,
+            "url_name": "sing-music-2",
+            "images": [
+                {
+                    "id": 1,
+                    "alt": "yellow",
+                    "src": "1.jpg"
+                },
+                {
+                    "id": 2,
+                    "alt": "yellow",
+                    "src": "1.jpg"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Sing Record กอดเขานานๆนะ #3",
+            "event_date": "2023-03-13",
+            "target_price": 200000,
+            "ownership": 10,
+            "price_per_ownership": 20000,
+            "description": "abc...df.df.df.ffff",
+            "company_id": 1,
+            "url_name": "sing-record-kodkow-3",
+            "images": [
+                {
+                    "id": 1,
+                    "alt": "yellow",
+                    "src": "1.jpg"
+                },
+                {
+                    "id": 2,
+                    "alt": "yellow",
+                    "src": "1.jpg"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "S Peak #1",
+            "event_date": "2023-03-10",
+            "target_price": 200000,
+            "ownership": 10,
+            "price_per_ownership": 20000,
+            "description": "abc...df.df.df.ffff",
+            "company_id": 1,
+            "url_name": "s-peak-1",
+            "images": [
+                {
+                    "id": 1,
+                    "alt": "yellow",
+                    "src": "1.jpg"
+                },
+                {
+                    "id": 2,
+                    "alt": "yellow",
+                    "src": "1.jpg"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Sing Reggae #2",
+            "event_date": "2023-03-25",
+            "target_price": 200000,
+            "ownership": 10,
+            "price_per_ownership": 20000,
+            "description": "abc...df.df.df.ffff",
+            "company_id": 1,
+            "url_name": "sing-reggae-3",
+            "images": [
+                {
+                    "id": 1,
+                    "alt": "yellow",
+                    "src": "1.jpg"
+                },
+                {
+                    "id": 2,
+                    "alt": "yellow",
+                    "src": "1.jpg"
+                }
+            ]
+        }
+    ]
+}
