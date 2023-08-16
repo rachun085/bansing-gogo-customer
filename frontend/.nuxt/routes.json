@@ -350,13 +350,6 @@
     "_name": "_7bf84f31"
   },
   {
-    "name": "page-account-login-firebase",
-    "path": "/page/account/login-firebase",
-    "component": "/Users/supx/bansing-fund/frontend/pages/page/account/login-firebase.vue",
-    "chunkName": "pages/page/account/login-firebase",
-    "_name": "_02b6ed53"
-  },
-  {
     "name": "page-account-profile",
     "path": "/page/account/profile",
     "component": "/Users/supx/bansing-fund/frontend/pages/page/account/profile.vue",
@@ -371,11 +364,11 @@
     "_name": "_4358b00b"
   },
   {
-    "name": "page-account-wishlist",
-    "path": "/page/account/wishlist",
-    "component": "/Users/supx/bansing-fund/frontend/pages/page/account/wishlist.vue",
-    "chunkName": "pages/page/account/wishlist",
-    "_name": "_d0f853a6"
+    "name": "page-account-reset-password",
+    "path": "/page/account/reset-password",
+    "component": "/Users/supx/bansing-fund/frontend/pages/page/account/reset-password.vue",
+    "chunkName": "pages/page/account/reset-password",
+    "_name": "_0c3a63c1"
   },
   {
     "name": "page-compare-compare-1",

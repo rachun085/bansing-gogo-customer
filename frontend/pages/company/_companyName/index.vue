@@ -12,8 +12,9 @@
                   <div class="col-sm-12">
                     <div class="top-banner-wrapper">
                       <a href="#">
+                        <!-- TODO: fetch from db -->
                         <img
-                          :src="'@/assets/images/mega-menu/2.jpg'"
+                          :src="coverImagePath"
                           class="img-fluid"
                           alt
                         />
@@ -51,28 +52,28 @@
                                 <ul>
                                   <li>
                                     <img
-                                      :src="'@/assets/images/icon/2.png'"
+                                      :src="getImgUrl('icon/2.png')"
                                       @click="grid2()"
                                       class="product-2-layout-view"
                                     />
                                   </li>
                                   <li>
                                     <img
-                                      :src="'@/assets/images/icon/3.png'"
+                                      :src="getImgUrl('icon/3.png')"
                                       @click="grid3()"
                                       class="product-3-layout-view"
                                     />
                                   </li>
                                   <li>
                                     <img
-                                      :src="'@/assets/images/icon/4.png'"
+                                      :src="getImgUrl('icon/4.png')"
                                       @click="grid4()"
                                       class="product-4-layout-view"
                                     />
                                   </li>
                                   <li>
                                     <img
-                                      :src="'@/assets/images/icon/6.png'"
+                                      :src="getImgUrl('icon/6.png')"
                                       @click="grid6()"
                                       class="product-6-layout-view"
                                     />
@@ -108,14 +109,13 @@
                                 alt
                               />
                               <h3 class="mt-3">
-                                Sorry! Couldn't find the product you were
-                                looking For!!!
+                                ยังไม่มีรายการ Event ในขณะนี้ 
                               </h3>
                               <div class="col-12 mt-3">
                                 <nuxt-link
                                   :to="{ path: '/' }"
                                   class="btn btn-solid"
-                                  >continue shopping</nuxt-link
+                                >กลับหน้าหลัก</nuxt-link
                                 >
                               </div>
                             </div>
@@ -258,6 +258,7 @@ import quickviewModel from '../../../components/widgets/quickview';
 import compareModel from '../../../components/widgets/compare-popup';
 import cartModel from '../../../components/cart-model/cart-modal-popup';
 import CompanyService from '../../../src/services/company/company.service';
+import { log } from 'console';
 
 export default {
   components: {
@@ -269,10 +270,13 @@ export default {
     compareModel,
     cartModel,
   },
-  created() {},
+  created() {
+    // this.fetchEventData();
+  },
   data() {
     return {
       bannerimagepath: require('@/assets/images/side-banner.png'),
+      coverImagePath: null,
       col2: false,
       col3: false,
       col4: true,
@@ -293,6 +297,8 @@ export default {
       dismissCountDown: 0,
       eventsList: [],
       companyName: '',
+      imageList: [],
+      coverImageName: ''
     };
   },
   head() {
@@ -468,8 +474,30 @@ export default {
           console.log(`data event by company => ${urlName}`, response.data);
           this.eventsList = response.data.event;
           this.companyName = response.data.name;
+          this.imageList = response.data.image;
+
+          for (const it of response.data.image) {
+            if(it.type == 2){
+              this.coverImageName = it.alt
+            }
+          }
         }
+
+        //set cover image
+        if(this.coverImageName !== ''){
+          this.coverImagePath = require('@/assets/images/uploads/company/' + this.coverImageName)
+        }else{
+          this.coverImagePath = require('@/assets/images/uploads/company/1370x385.jpg');
+        }
+        
       });
+    },
+    getImgUrl(path) {
+      return require('@/assets/images/' + path)
+    },
+    getCoverImgUrl(path) {
+      console.log("path : ", this.imageList);
+      return require('@/assets/images/uploads/company/' + path)
     },
   },
 };

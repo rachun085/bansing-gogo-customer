@@ -63,14 +63,25 @@
             <i class="ti-settings"></i>
           </div>
           <div class="show-div setting">
-            <ul class="list-inline">
+            <ul class="list-inline" v-if="loggedIn">
               <li>
-                <a href="javascript:void(0)" @click="logOut()">Logout</a>
+                <nuxt-link :to="{ path: '/page/account/dashboard'}">
+                  แดชบอร์ด
+                </nuxt-link>
+              </li>
+              <li>
+                <a href="javascript:void(0)" @click="logOut()">ออกจากระบบ</a>
+              </li>
+
+            </ul>
+            <ul class="list-inline" v-if="!loggedIn">
+              <li>
+                <a href="javascript:void(0)" @click="logOut()">เข้าสู่ระบบ</a>
               </li>
             </ul>
           </div>
         </li>
-        <li class="onhover-div mobile-setting">
+        <!-- <li class="onhover-div mobile-setting">
           <div>
             <img alt :src='"@/assets/images/icon/layout4/setting.png"' class="img-fluid">
             <i class="ti-settings"></i>
@@ -92,8 +103,8 @@
               </li>
             </ul>
           </div>
-        </li>
-        <li class="onhover-div mobile-cart">
+        </li> -->
+        <!-- <li class="onhover-div mobile-cart">
           <div>
             <img alt :src='"@/assets/images/icon/layout4/cart.png"' class="img-fluid">
             <i class="ti-shopping-cart"></i>
@@ -142,7 +153,7 @@
               </div>
             </li>
           </ul>
-        </li>
+        </li> -->
       </ul>
     </div>
   </div>
@@ -155,7 +166,8 @@ export default {
     return {
       currencyChange: {},
       search: false,
-      searchString: ''
+      searchString: '',
+      loggedIn: false
     }
   },
   computed: {
@@ -166,12 +178,19 @@ export default {
       cart: 'cart/cartItems',
       cartTotal: 'cart/cartTotalAmount',
       curr: 'products/changeCurrency'
-    })
+    }),
+    currentUser() {
+      return this.$store.state.auth.user;
+    }
   },
   mounted() {
     EventBus.on("logout", () => {
       this.logOut();
     });
+    console.log("current user : ", this.currentUser);
+    if (this.currentUser) {
+      this.loggedIn = true;
+    }
   },
   beforeDestroy() {
     EventBus.remove("logout");
@@ -198,6 +217,9 @@ export default {
     },
     logOut(){
       this.$store.dispatch('auth/logout');
+      this.$router.push('/page/account/login');
+    },
+    login(){
       this.$router.push('/page/account/login');
     }
   }

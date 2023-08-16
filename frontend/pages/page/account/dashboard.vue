@@ -98,6 +98,11 @@
                                 v-if="data.value == 'เสร็จสมบูรณ์'"
                                 >{{ data.value }}</b
                               >
+                              <b
+                                class="text-danger"
+                                v-if="data.value == 'หมดอายุ'"
+                                >{{ data.value }}</b
+                              >
                             </template>
                           </b-table>
                         </div>
@@ -111,7 +116,12 @@
                 @click="linkToPage('confirm-payment')"
               >
               </b-tab>
-              <b-tab title="ใบสัญญา" @click="tabMyContract" lazy :active="$route.hash === '#contract'">
+              <b-tab
+                title="ใบสัญญา"
+                @click="tabMyContract"
+                lazy
+                :active="$route.hash === '#contract'"
+              >
                 <b-card-text>
                   <div class="dashboard-right">
                     <div class="dashboard">
@@ -164,10 +174,17 @@
         no-close-on-backdrop
         @hidden="resetModal"
       >
-      <div class="mb-3">
-         <b-button v-b-modal.modal-sign-contract variant="primary" :disabled="editNo >= 2" ><i class="fa fa-pencil" aria-hidden="true"></i> เซ็นสัญญา</b-button>
-         <span class="text-secondary ml-2">แก้ไขลายเซ็นครั้งที่ ({{editNo}} / 2)</span>
-      </div>
+        <div class="mb-3">
+          <b-button
+            v-b-modal.modal-sign-contract
+            variant="primary"
+            :disabled="editNo >= 2"
+            ><i class="fa fa-pencil" aria-hidden="true"></i> เซ็นสัญญา</b-button
+          >
+          <span class="text-secondary ml-2"
+            >แก้ไขลายเซ็นครั้งที่ ({{ editNo }} / 2)</span
+          >
+        </div>
         <Pdf :base64="base64PdfData" v-if="showModalViewPdf"></Pdf>
       </b-modal>
       <b-modal
@@ -179,7 +196,53 @@
       >
         <Canvas v-model="canvas" :documentId="documentId"></Canvas>
       </b-modal>
-      <!-- <pdf :base64="itemContractTable[0].contract"></pdf> -->
+      <b-modal
+        id="confirm-password-modal"
+        title="กรุณายืนยันรหัสผ่านเพื่อดูสัญญา"
+        ref="confirm-password-modal"
+        no-close-on-backdrop
+        centered
+        @hidden="closeModalValidatePassword"
+        @ok="handleOk"
+      >
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-lg-12">
+              <form ref="form" @submit.stop.prevent="validate">
+                <div class="col-md-12">
+                  <div
+                    v-if="requiredPassword"
+                    class="p-3 mb-2 bg-danger text-white"
+                  >
+                    กรุณากรอกรหัสผ่าน
+                  </div>
+                  <div
+                    v-if="passwordNotValid"
+                    class="p-3 mb-2 bg-danger text-white"
+                  >
+                    รหัสผ่านไม่ถูกต้อง กรุณากรอกใหม่อีกครั้ง
+                  </div>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="validatePassword"
+                    v-model="validatePassword"
+                    placeholder=""
+                    name="validatePassword"
+                    required=""
+                  />
+                </div>
+                <!-- <input
+                    type="button"
+                    class="btn btn-solid mt-3"
+                    value="ยืนยัน"
+                    @click="validate"
+                  /> -->
+              </form>
+            </div>
+          </div>
+        </div>
+      </b-modal>
     </section>
 
     <Footer />
@@ -198,7 +261,7 @@ import { PDFDocument, StandardFonts, rgb, degrees } from 'pdf-lib';
 import moment from 'moment';
 moment.locale('th');
 import Pdf from '../../../components/pdf/pdf-viewer.vue';
-import Canvas from '../../../components/canvas/drawing-canvas.vue'
+import Canvas from '../../../components/canvas/drawing-canvas.vue';
 
 export default {
   name: 'Dashboard',
@@ -207,7 +270,7 @@ export default {
     Footer,
     Breadcrumbs,
     Pdf,
-    Canvas
+    Canvas,
   },
   // head: {
   //   script: [
@@ -249,6 +312,10 @@ export default {
           label: 'วันที่ทำรายการ',
         },
         {
+          key: 'due_date',
+          label: 'โปรดชำระเงินก่อน',
+        },
+        {
           key: 'status',
           label: 'สถานะการชำระเงิน',
         },
@@ -277,7 +344,10 @@ export default {
       base64PdfData: '',
       canvas: null,
       editNo: null,
-      documentId: null
+      documentId: null,
+      validatePassword: null,
+      requiredPassword: false,
+      passwordNotValid: false,
     };
   },
   head() {
@@ -307,7 +377,7 @@ export default {
     if (!this.currentUser) {
       this.$router.push('/page/account/login');
     }
-    if(this.$route.hash == "#contract") {
+    if (this.$route.hash == '#contract') {
       this.tabMyContract();
     }
     this.fetchProfile();
@@ -354,9 +424,14 @@ export default {
                     register_name: it.event.name,
                     total_price: this.numberWithCommas(it.totalPrice),
                     created_at: this.formatDate(it.createdAt),
+                    due_date: this.formatDate(it.dueDate, 'LLL'),
                     status:
                       it.status == 'UNCOMPLETE'
                         ? 'ยังไม่สมบูรณ์'
+                        : it.status == 'COMPLETE'
+                        ? 'เสร็จสมบูรณ์'
+                        : it.status == 'EXPIRED'
+                        ? 'หมดอายุ'
                         : 'เสร็จสมบูรณ์',
                   };
 
@@ -385,18 +460,21 @@ export default {
             if (response) {
               if (response.data.data.length > 0) {
                 let id = 1;
+                console.log('dadd : ', response.data.data);
                 for (const it of response.data.data) {
-                  const item = {
-                    id: id,
-                    register_name: it.event.name,
-                    created_at: this.formatDate(it.document.createdAt),
-                    contract: it.document.fileData,
-                    editNo: it.document.editNo,
-                    documentId: it.document.id
-                  };
+                  if (it.document) {
+                    const item = {
+                      id: id,
+                      register_name: it.event.name,
+                      created_at: this.formatDate(it.document.createdAt),
+                      contract: it.document.fileData,
+                      editNo: it.document.editNo,
+                      documentId: it.document.id,
+                    };
 
-                  this.itemContractTable.push(item);
-                  id += 1;
+                    this.itemContractTable.push(item);
+                    id += 1;
+                  }
                 }
               }
               console.log(
@@ -435,22 +513,59 @@ export default {
       }
     },
     async viewContract(base64Data, data) {
-      console.log("view data contract : ", data);
-      this.$refs['view-pdf-modal'].show();
+      // console.log('view data contract : ', data);
+      this.$refs['confirm-password-modal'].show();
+
+      // this.$refs['view-pdf-modal'].show();
       this.base64PdfData = base64Data;
       this.editNo = data.item.editNo;
       this.documentId = data.item.documentId;
 
-      this.showModalViewPdf = !this.showModalViewPdf;
-
-      // this.$refs['sign-contract-modal'].show();
+      // this.showModalViewPdf = !this.showModalViewPdf;
     },
     resetModal() {
       console.log('reset modal');
       this.showModalViewPdf = false;
       this.base64PdfData = '';
-      this.editNo = null
-      this.documentId = null
+      this.editNo = null;
+      this.documentId = null;
+      this.validatePassword = null;
+      this.requiredPassword = false;
+      this.passwordNotValid = false;
+    },
+    closeModalValidatePassword() {
+      console.log('close modal validate password');
+      this.validatePassword = null;
+      this.requiredPassword = false;
+      this.passwordNotValid = false;
+    },
+    handleOk(bvModalEvent) {
+      // Prevent modal from closing
+      bvModalEvent.preventDefault();
+      // Trigger submit handler
+      this.validate();
+    },
+    validate() {
+      console.log('submit validate password');
+      if (!this.validatePassword) {
+        this.requiredPassword = true;
+      }
+
+      const payload = {
+        password: this.validatePassword,
+        userId: this.profileData.id,
+      };
+
+      UserService.validateContractPassword(payload).then((response) => {
+        if (response.data.status == 'true') {
+          this.$refs['confirm-password-modal'].hide();
+          this.$refs['view-pdf-modal'].show();
+          this.showModalViewPdf = !this.showModalViewPdf;
+        } else {
+          this.requiredPassword = false;
+          this.passwordNotValid = true;
+        }
+      });
     },
   },
 };

@@ -11,13 +11,13 @@
                 </div>
                 <div class="footer-contant">
                   <div class="footer-logo">
-                    <img :src='"@/assets/images/icon/layout3/footerlogo.png"' alt="logo" />
+                    <img :src='"@/assets/images/icon/logo.png"' alt="logo" />
                   </div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                  <p>บริษัท บ้านสิงห์ แฟมิลี่ จำกัด</p>
                 </div>
               </div>
               <div class="col-lg-6 subscribe-wrapper">
-                <div class="subscribe-block">
+                <!-- <div class="subscribe-block">
                   <h2>newsletter</h2>
                   <form>
                     <div class="form-group">
@@ -30,21 +30,22 @@
                       <button type="submit" class="btn btn-solid">subscribe</button>
                     </div>
                   </form>
-                </div>
+                </div> -->
               </div>
               <div class="col-lg-3">
                 <div class="footer-title">
-                  <h4>store information</h4>
+                  <h4>ติดต่อเรา</h4>
                 </div>
                 <div class="footer-contant">
                   <ul class="contact-details">
-                    <li>Multikart Demo Store, Demo store India 345-659</li>
-                    <li>Call Us: 123-456-7898</li>
-                    <li>
+                    <li>บริษัท บ้านสิงห์ แฟมิลี่ จำกัด</li>
+                    <li>199/2 หมู่ 3 ตำบลในเมือง อำเภอเมือง จังหวัดขอนแก่น 40000</li>
+                    <!-- <li>Call Us: 123-456-7898</li> -->
+                    <!-- <li>
                       Email Us:
                       <a href="#">Support@Fiot.com</a>
-                    </li>
-                    <li>Fax: 123456</li>
+                    </li> -->
+                    <!-- <li>Fax: 123456</li> -->
                   </ul>
                 </div>
               </div>
@@ -52,7 +53,7 @@
           </section>
         </div>
       </div>
-      <div class="dark-layout">
+      <!-- <div class="dark-layout">
         <div class="container">
           <section class="small-section">
             <div class="row footer-theme2">
@@ -109,18 +110,18 @@
             </div>
           </section>
         </div>
-      </div>
+      </div> -->
       <div class="sub-footer darker-subfooter">
         <div class="container">
           <div class="row">
             <div class="col-xl-6 col-md-6 col-sm-12">
               <div class="footer-end">
                 <p>
-                  <i class="fa fa-copyright" aria-hidden="true"></i> 2017-18 themeforest powered by pixelstrap
+                  <i class="fa fa-copyright" aria-hidden="true"></i> 2023 Bansing GO GO
                 </p>
               </div>
             </div>
-            <div class="col-xl-6 col-md-6 col-sm-12">
+            <!-- <div class="col-xl-6 col-md-6 col-sm-12">
               <div class="payment-card-bottom">
                 <ul>
                   <li>
@@ -150,7 +151,7 @@
                   </li>
                 </ul>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>

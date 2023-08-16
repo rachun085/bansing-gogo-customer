@@ -54,10 +54,9 @@ const _5226a468 = () => interopDefault(import('../pages/page/account/contact.vue
 const _538964dc = () => interopDefault(import('../pages/page/account/dashboard.vue' /* webpackChunkName: "pages/page/account/dashboard" */))
 const _50f46143 = () => interopDefault(import('../pages/page/account/forget-password.vue' /* webpackChunkName: "pages/page/account/forget-password" */))
 const _7bf84f31 = () => interopDefault(import('../pages/page/account/login.vue' /* webpackChunkName: "pages/page/account/login" */))
-const _02b6ed53 = () => interopDefault(import('../pages/page/account/login-firebase.vue' /* webpackChunkName: "pages/page/account/login-firebase" */))
 const _5a4e1d71 = () => interopDefault(import('../pages/page/account/profile.vue' /* webpackChunkName: "pages/page/account/profile" */))
 const _4358b00b = () => interopDefault(import('../pages/page/account/register.vue' /* webpackChunkName: "pages/page/account/register" */))
-const _d0f853a6 = () => interopDefault(import('../pages/page/account/wishlist.vue' /* webpackChunkName: "pages/page/account/wishlist" */))
+const _0c3a63c1 = () => interopDefault(import('../pages/page/account/reset-password.vue' /* webpackChunkName: "pages/page/account/reset-password" */))
 const _a97f746e = () => interopDefault(import('../pages/page/compare/compare-1.vue' /* webpackChunkName: "pages/page/compare/compare-1" */))
 const _a963456c = () => interopDefault(import('../pages/page/compare/compare-2.vue' /* webpackChunkName: "pages/page/compare/compare-2" */))
 const _0a2f0be5 = () => interopDefault(import('../pages/page/element/banner.vue' /* webpackChunkName: "pages/page/element/banner" */))
@@ -423,10 +422,6 @@ export const routerOptions = {
     component: _7bf84f31,
     name: "page-account-login"
   }, {
-    path: "/page/account/login-firebase",
-    component: _02b6ed53,
-    name: "page-account-login-firebase"
-  }, {
     path: "/page/account/profile",
     component: _5a4e1d71,
     name: "page-account-profile"
@@ -435,9 +430,9 @@ export const routerOptions = {
     component: _4358b00b,
     name: "page-account-register"
   }, {
-    path: "/page/account/wishlist",
-    component: _d0f853a6,
-    name: "page-account-wishlist"
+    path: "/page/account/reset-password",
+    component: _0c3a63c1,
+    name: "page-account-reset-password"
   }, {
     path: "/page/compare/compare-1",
     component: _a97f746e,

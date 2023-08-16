@@ -20,7 +20,7 @@
                         </div>
                     <div class="absolute-logo">
                         <div class="brand-logo">
-                            <a href="#"><img alt="" :src='"@/assets/images/icon/logo/12.png"'></a>
+                            <a href="#"><img alt="" :src='"@/assets/images/icon/logo.png"'></a>
                         </div></div>
                     <div class="">
                         <div class="menu-right pull-right">

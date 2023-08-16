@@ -105,9 +105,9 @@
                           <div class="col-sm-12">
                             <div class="text-center section-t-space section-b-space" v-if="filterProduct.length == 0">
                               <img :src='"@/assets/images/empty-search.jpg"' class="img-fluid" alt />
-                              <h3 class="mt-3">Sorry! Couldn't find the product you were looking For!!!</h3>
+                              <h3 class="mt-3">ขออภัย ยังไม่มีรายการ Event ณ ขณะนี้</h3>
                               <div class="col-12 mt-3">
-                                  <nuxt-link :to="{ path: '/'}" class="btn btn-solid">continue shopping</nuxt-link>
+                                  <nuxt-link :to="{ path: '/'}" class="btn btn-solid">กลับไปยังหน้าหลัก</nuxt-link>
                               </div>
                             </div>
                           </div>

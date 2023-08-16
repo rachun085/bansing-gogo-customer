@@ -4,7 +4,7 @@
       <div class="light-layout">
         <div class="container">
           <section class="small-section border-section border-top-0">
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-lg-6">
                 <div class="subscribe">
                   <div>
@@ -34,7 +34,7 @@
                   <button type="submit" class="btn btn-solid" id="mc-submit">subscribe</button>
                 </form>
               </div>
-            </div>
+            </div> -->
           </section>
         </div>
       </div>
@@ -45,7 +45,7 @@
               <div class="footer-title footer-mobile-title">
                 <h4>about</h4>
               </div>
-              <div class="footer-contant">
+              <!-- <div class="footer-contant">
                 <div class="footer-logo">
                   <img :src='"@/assets/images/icon/logo.png"' alt="logo" />
                 </div>
@@ -79,10 +79,16 @@
                     </li>
                   </ul>
                 </div>
-              </div>
+              </div> -->
+              <div class="footer-contant">
+                  <div class="footer-logo">
+                    <img :src='"@/assets/images/icon/logo.png"' alt="logo" />
+                  </div>
+                  <p>บริษัท บ้านสิงห์ แฟมิลี่ จำกัด</p>
+                </div>
             </div>
             <div class="col offset-xl-1">
-              <div class="sub-title">
+              <!-- <div class="sub-title">
                 <div class="footer-title">
                   <h4>my account</h4>
                 </div>
@@ -105,10 +111,10 @@
                     </li>
                   </ul>
                 </div>
-              </div>
+              </div> -->
             </div>
             <div class="col">
-              <div class="sub-title">
+              <!-- <div class="sub-title">
                 <div class="footer-title">
                   <h4>why we choose</h4>
                 </div>
@@ -131,28 +137,23 @@
                     </li>
                   </ul>
                 </div>
-              </div>
+              </div> -->
             </div>
             <div class="col">
               <div class="sub-title">
                 <div class="footer-title">
-                  <h4>store information</h4>
+                  <h4>ติดต่อเรา</h4>
                 </div>
                 <div class="footer-contant">
-                  <ul class="contact-list">
-                    <li>
-                      <i class="fa fa-map-marker"></i>Multikart Demo Store, Demo store India 345-659
-                    </li>
-                    <li>
-                      <i class="fa fa-phone"></i>Call Us: 123-456-7898
-                    </li>
-                    <li>
-                      <i class="fa fa-envelope-o"></i>Email Us:
+                 <ul class="contact-details">
+                    <li>บริษัท บ้านสิงห์ แฟมิลี่ จำกัด</li>
+                    <li>199/2 หมู่ 3 ตำบลในเมือง อำเภอเมือง จังหวัดขอนแก่น 40000</li>
+                    <!-- <li>Call Us: 123-456-7898</li> -->
+                    <!-- <li>
+                      Email Us:
                       <a href="#">Support@Fiot.com</a>
-                    </li>
-                    <li>
-                      <i class="fa fa-fax"></i>Fax: 123456
-                    </li>
+                    </li> -->
+                    <!-- <li>Fax: 123456</li> -->
                   </ul>
                 </div>
               </div>
@@ -166,11 +167,11 @@
             <div class="col-xl-6 col-md-6 col-sm-12">
               <div class="footer-end">
                 <p>
-                  <i class="fa fa-copyright" aria-hidden="true"></i> 2017-18 themeforest powered by pixelstrap
+                  <i class="fa fa-copyright" aria-hidden="true"></i> 2023 Bansing GO GO
                 </p>
               </div>
             </div>
-            <div class="col-xl-6 col-md-6 col-sm-12">
+            <!-- <div class="col-xl-6 col-md-6 col-sm-12">
               <div class="payment-card-bottom">
                 <ul>
                   <li>
@@ -200,7 +201,7 @@
                   </li>
                 </ul>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>

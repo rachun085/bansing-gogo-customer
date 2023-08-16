@@ -4,7 +4,8 @@ const pdfjsConfig = require('./pdfjs.config')
 
 export default {
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    baseUrlBackend: process.env.BASE_URL_BACKEND || 'http://localhost:4000'
   },
   ssr: false,
   subdirectory: '/multikart',
