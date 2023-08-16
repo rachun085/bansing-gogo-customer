@@ -10,8 +10,8 @@ export const company = {
     all({ commit }){
         return CompanyService.getAllCompany().then(
             company => {
-                commit('fetchAllSuccess', company);
-                return Promise.resolve(company);
+                commit('fetchAllSuccess', company.data);
+                return Promise.resolve(company.data);
             },
             error => {
                 commit('fetchAllFailure');

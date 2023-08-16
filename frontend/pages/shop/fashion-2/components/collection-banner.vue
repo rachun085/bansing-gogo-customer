@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import { log } from 'console';
 import CompanyService from '../../../../src/services/company/company.service'
 export default {
   data() {
@@ -34,27 +35,29 @@ export default {
     }
   },
   computed: {
-    defaultData(){
-      // console.log("default data : ", this.$store.state.company.company);
-      return this.$store.state.company.company;
-    }
+    // defaultData(){
+    //   // console.log("default data : ", this.$store.state.company.company);
+    //   return this.$store.state.company.company;
+    // }
   },
   created() {
-    if (!this.defaultData) {
-      this.fetchCompanyData();
-    }else{
-      this.loadDataToArray(this.$store.state.company.company);
-    }
+    // if (!this.defaultData) {
+      
+    // }else{
+      // this.loadDataToArray(this.$store.state.company.company);
+    // }
   },
   mounted() {
-    
+    this.fetchCompanyData();
   },
   methods: {
     fetchCompanyData(){
       this.$store.dispatch('company/all').then(
-        () => {
-          console.log("re-fetch data success");
-          console.log("company data : ", this.$store.state.company.company);
+        (response) => {
+          this.loadDataToArray(response);
+
+          console.log("re-fetch data company success");
+          // console.log("company data : ", this.$store.state.company.company);
         }
       )
     },
