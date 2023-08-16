@@ -1,6 +1,7 @@
 import { Body, ClassSerializerInterceptor, Controller, Post, Req, UseGuards, UseInterceptors } from '@nestjs/common';
 import { JwtAuthGuard } from 'src/auth/jwt.auth.guard';
 import ConfirmEmailDto from './dto/confirmEmail.dto';
+import OrderSuccessDto from './dto/order.success.dto';
 import { EmailConfirmationService } from './email-confirmation.service';
 
 @Controller('email-confirmation')
@@ -55,8 +56,34 @@ export class EmailConfirmationController {
             //     status: "fail",
             //     data: error.response.message
             // }
-            // console.log("error from /email-confirmation/confirm => ", error.response);
-            // return err;
+            console.log("error from /email-confirmation/confirm => ", error.response);
+            return error;
+        }
+        
+    }
+
+    @UseGuards(JwtAuthGuard)
+    @Post('order-success')
+    async sendMailOrderSuccess(@Body() dto: OrderSuccessDto) {
+        try {
+            console.log(`call send email confirm register [POST] /email-confirmation/order-success`);
+            await this.emailConfirmationService.sendMailOrderSuccess(dto);
+
+            const response = {
+                statusCode: 200,
+                status: "success",
+                data: "Send email order success sucessfully"
+            }
+            return response;
+
+        } catch (error) {
+            // const err = {
+            //     statusCode: error.response.statusCode,
+            //     status: "fail",
+            //     data: error.response.message
+            // }
+            console.log("error from /email-confirmation/order-success => ", error.response);
+            return error;
         }
         
     }

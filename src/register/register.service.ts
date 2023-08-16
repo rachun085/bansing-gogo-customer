@@ -8,7 +8,7 @@ import { User } from 'src/entities/user.entity';
 import { EventsDescription, IsNull, Not, Repository } from 'typeorm';
 import { CreateRegisterDto } from './dto/create.register.dto';
 var fs = require('fs');
-const path = require('node:path'); 
+const path = require('node:path');
 
 @Injectable()
 export class RegisterService {
@@ -24,8 +24,18 @@ export class RegisterService {
     async getAll(): Promise<any> {
         try {
             const register = await this.registerRepository.find({
-                relations: ['user', 'event'],
+                relations: ['user', 'event', 'registerPayment'],
             });
+
+            for (const it of register) {
+                if (it.status == Register.Status.Uncomplete && it.registerPayment.length == 0) {
+                    if (new Date() > new Date(it.dueDate)) {
+                        it.status = Register.Status.Expired
+
+                        await this.registerRepository.save(register);
+                    }
+                }
+            }
 
             const result = {
                 result: "success",
@@ -140,8 +150,14 @@ export class RegisterService {
                 }
             });
 
-            if(register.length > 0){
+            if (register.length > 0) {
                 for (const it of register) {
+                    if (it.status == Register.Status.Uncomplete && it.registerPayment.length == 0) {
+                        if (new Date() > new Date(it.dueDate)) {
+                            it.status = Register.Status.Expired
+                        }
+                    }
+
                     const item = {
                         id: it.id,
                         createdAt: it.createdAt,
@@ -155,9 +171,10 @@ export class RegisterService {
 
                     registerData.push(item)
                 }
-                
+
             }
 
+            await this.registerRepository.save(register);
             const result = {
                 data: registerData,
                 user: register[0].user
@@ -187,10 +204,10 @@ export class RegisterService {
                 }
             });
 
-            if(register.length > 0){
+            if (register.length > 0) {
                 for (const it of register) {
-                    const docContentBase64 = fs.readFileSync(path.join(process.cwd(), `/frontend/assets/documents/${it.document[0].fileName}`), {encoding: 'base64'});
-                    const item = {
+                    
+                    let item = {
                         id: it.id,
                         createdAt: it.createdAt,
                         updatedAt: it.updatedAt,
@@ -199,17 +216,34 @@ export class RegisterService {
                         status: it.status,
                         dueDate: it.dueDate,
                         event: it.event,
-                        document: {
+                        // document: {
+                        //     id: it.document[0].id,
+                        //     fileData: docContentBase64,
+                        //     createdAt: it.document[0].createdAt,
+                        //     editNo: it.document[0].editNo
+                        // }
+                    }
+
+                    if(it.document.length > 0){
+                        const document = {
                             id: it.document[0].id,
-                            fileData: docContentBase64,
                             createdAt: it.document[0].createdAt,
                             editNo: it.document[0].editNo
                         }
+                        if(fs.existsSync(path.join(process.cwd(), `/frontend/assets/documents/${it.document[0].fileName}`))){
+                            const docContentBase64 = fs.readFileSync(path.join(process.cwd(), `/frontend/assets/documents/${it.document[0].fileName}`), { encoding: 'base64' });
+                            document["fileData"] = docContentBase64
+                        }else{
+                            document["fileData"] = ""
+                        }
+                        
+                        item["document"] = document
                     }
+                    
 
                     registerData.push(item)
                 }
-                
+
             }
 
             const result = {

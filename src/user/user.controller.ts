@@ -79,6 +79,29 @@ export class UserController {
     return;
   }
 
+  @HttpCode(200)
+  @UseGuards(JwtAuthGuard)
+  @Roles('ROLE_SUP', 'ROLE_ADMIN', 'ROLE_CUSTOMER')
+  @Post('validate-contract-password')
+  async validateContractPassword(@Body() dto, @Res() res, @Req() req): Promise<any> {
+    try {
+      console.log(`validate contract password [POST] /user/validate-contract-password`);
+      const user = await this.userService.validateContractPassword(dto.password, dto.userId);
+      if(user){
+        res.send(user);
+        return user;
+      }
+    } catch (error) {
+      throw new HttpException({
+        status: HttpStatus.FORBIDDEN,
+        message: error.message,
+      }, HttpStatus.FORBIDDEN, {
+        cause: error
+      });
+    }
+
+  }
+
   
 
 

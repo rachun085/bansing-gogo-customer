@@ -3,6 +3,21 @@ import { ConfigService } from '@nestjs/config';
 const nodemailer = require('nodemailer');
 import { createTransport } from 'nodemailer';
 import * as Mail from 'nodemailer/lib/mailer';
+const hbs = require('nodemailer-express-handlebars');
+
+
+const handlebarOptions = {
+  viewEngine: {
+      extName: '.handlebars',
+      partialsDir: './views/partials',
+      layoutsDir: './views/layouts',
+      defaultLayout: '',
+  },
+  viewPath: './views/templates',
+  extName: '.handlebars',
+};
+
+
 
 @Injectable()
 export class MailService {
@@ -22,6 +37,9 @@ export class MailService {
   }
 
   async sendMail(options: Mail.Options) {
+
+    // this.nodemailerTransport.use('compile', hbs(handlebarOptions));
+    // var reminder = this.nodemailerTransport.
     return this.nodemailerTransport.sendMail(options, function (error, info) {
       if (error) {
         console.log("Error in sending email " + error);

@@ -1,4 +1,4 @@
-import { Body, Controller, Get, HttpCode, HttpException, HttpStatus, Inject, Post, Req, Res, Session, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, HttpException, HttpStatus, Inject, Param, Post, Req, Res, Session, UseGuards } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { AuthGuard } from '@nestjs/passport';
 import { User } from 'src/entities/user.entity';
@@ -11,6 +11,8 @@ import { LocalAuthGuard } from './local.auth.guard';
 import { RefreshTokenGuard } from './refresh.token.auth.guard';
 import { Request } from 'express';
 import { EmailConfirmationService } from 'src/email-confirmation/email-confirmation.service';
+import ConfirmResetPasswordDto from './dto/comfirm.reset.password.dto';
+import ResetPasswordDto from 'src/email-confirmation/dto/reset.password.dto';
 
 @Controller('auth')
 export class AuthController {
@@ -39,7 +41,6 @@ export class AuthController {
     //             );
     //         }
 
-    //         // TODO: setup later if use
     //         // const payload: JwtPayload = { sub: req.user.username, userId: req.user.id };
     //         // const accessToken = this.jwtService.sign(payload)
     //         console.log(req.user);
@@ -74,7 +75,7 @@ export class AuthController {
         const userId = req.user['sub'];
         const refreshToken = req.user['refreshToken'];
         // console.log("refresh token from req : ", req.user);
-        
+
         return this.authService.refreshToken(userId, refreshToken);
     }
 
@@ -99,6 +100,55 @@ export class AuthController {
             return err;
         }
 
+    }
+
+    @HttpCode(200)
+    @Post('reset-password')
+    async requestResetPassword(@Body('email') email, @Req() req, @Res() res): Promise<any> {
+        console.log(`call reset password [POST] /auth/reset-password`);
+        const reset = await this.usersService.requestResetPassword(email);
+
+        const payloadSendEmail: ResetPasswordDto = {
+            email: email,
+            url: reset.url
+        }
+
+        console.log(`sending mail...`);
+        await this.emailConfirmationService.sendMailResetPassword(payloadSendEmail);        //send mail
+        if(reset.data.id){
+            const response = {
+                status: "success",
+                data: reset.data
+            }
+
+            res.send(response);
+            return response;
+        }
+        return;
+    }
+
+    @Post('confirm-reset-password')
+    async resetPassword(@Req() req, @Body() dto: ConfirmResetPasswordDto, @Res() res) {
+        console.log(`call confirm reset password [POST] /auth/confirm-reset-password`);
+        let confirm = await this.usersService.resetPassword(dto);
+        const { password, refreshToken, resetPasswordToken, ...result } = confirm;
+
+        const response = {
+            status: "success",
+            data: result
+        }
+
+        res.send(response); 
+        return response;
+    }
+
+    @Get('find-token/:tokenId')
+    async findToken(@Req() req, @Param() param, @Res() res) {
+        console.log(`call find token [GET] /auth/find-token`);
+        let token = await this.usersService.findToken(param.tokenId);
+
+        res.send(token); 
+        return token;
     }
 
 }

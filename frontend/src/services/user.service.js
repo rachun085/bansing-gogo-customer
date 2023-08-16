@@ -20,6 +20,10 @@ class UserService {
     return axios.put(`${API_URL}/profile`, user);
   }
 
+  validateContractPassword(payload){
+    return axios.post(`${API_URL}/validate-contract-password`, payload);
+  }
+
 //   getModeratorBoard() {
 //     return axios.get(API_URL + 'mod', { headers: authHeader() });
 //   }

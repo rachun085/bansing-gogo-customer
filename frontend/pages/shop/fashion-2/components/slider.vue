@@ -75,7 +75,7 @@ export default {
   methods: {
     fetchBannerData() {
       BannerImage.getAllBannerImage().then((response) => {
-        if (response) {
+        if (response.data.length > 0) {
           for (const it of response.data) {
             const item = {
               imagePath: this.getImgUrl(it.base64Data),
@@ -87,6 +87,16 @@ export default {
 
             this.items.push(item);
           }
+        }else{
+          const item = {
+              imagePath: require('@/assets/images/home-banner/1.jpg'),
+              title: 'welcome to bansing gogo',
+              subTitle: '',
+              urlName: '/',
+              alignclass: 'p-left'
+            };
+
+            this.items.push(item);
         }
       });
     },

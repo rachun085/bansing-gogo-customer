@@ -59,6 +59,7 @@ export default {
       )
     },
     loadDataToArray(companyData){
+      console.log("company data: ", companyData);
       for (const it of companyData) {
         const item = {
           description: it.description,

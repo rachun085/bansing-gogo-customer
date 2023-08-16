@@ -145,7 +145,7 @@ export class EventController {
     @UseGuards(JwtAuthGuard, RolesGuard)
     @Roles('ROLE_SUP', 'ROLE_ADMIN')
     @Delete('/delete-image/:imageId')
-    async deleteCompany(@Req() req, @Res() res, @Param() param): Promise<any> {
+    async deleteImage(@Req() req, @Res() res, @Param() param): Promise<any> {
         try {
             console.log(`delete event image [DELETE] /event/delete-image [param image id : ${param.imageId}]`);
             const event = await this.eventService.deleteImageByImageId(param.imageId);
@@ -157,6 +157,30 @@ export class EventController {
             return response;
         } catch (error) {
             console.log(`error from [DELETE] /event/delete-image => `, error);
+            throw new HttpException({
+                status: HttpStatus.BAD_REQUEST,
+                message: error.message,
+            }, HttpStatus.BAD_REQUEST, {
+                cause: error
+            });
+        }
+    }
+
+    @UseGuards(JwtAuthGuard, RolesGuard)
+    @Roles('ROLE_SUP', 'ROLE_ADMIN')
+    @Delete('/delete-event/:eventId')
+    async deleteEvent(@Req() req, @Res() res, @Param() param): Promise<any> {
+        try {
+            console.log(`delete event [DELETE] /event/delete-event [param event id : ${param.eventId}]`);
+            const event = await this.eventService.deleteEvent(param.eventId);
+            const response = {
+                status: "success",
+                data: "Deleted successfuly"
+            }
+            res.send(response);
+            return response;
+        } catch (error) {
+            console.log(`error from [DELETE] /event/delete-company => `, error);
             throw new HttpException({
                 status: HttpStatus.BAD_REQUEST,
                 message: error.message,

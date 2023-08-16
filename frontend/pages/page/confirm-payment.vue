@@ -155,7 +155,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      order: 'products/getOrder'
+      order: 'products/getOrder',
     }),
     currentUser() {
       return this.$store.state.auth.user;
@@ -167,6 +167,7 @@ export default {
     }
     this.getRegisterData();
     this.getBankInformation();
+    console.log("order : ", this.order);
   },
   data() {
     return {
@@ -228,14 +229,16 @@ export default {
             this.registerData = response.data;
             console.log('data register => ', response.data);
             for (const it of this.registerData.data) {
-              const item = {
-                value: it.id,
-                text: `${it.event.name} | ลงทะเบียนเมื่อ ${this.formatDate(
-                  it.createdAt,
-                )}`,
-              };
+              if (it.status == 'UNCOMPLETE') {
+                const item = {
+                  value: it.id,
+                  text: `${it.event.name} | ลงทะเบียนเมื่อ ${this.formatDate(
+                    it.createdAt,
+                  )}`,
+                };
 
-              this.registerOptions.push(item);
+                this.registerOptions.push(item);
+              }
             }
           }
         },
@@ -247,16 +250,16 @@ export default {
     getBankInformation() {
       BankInformationService.getAll().then(
         (response) => {
-          if (response) {
+          if (response.data) {
             this.bankInformationData = response.data;
-            for (const it of response.data) {
+            // for (const it of response.data) {
               const item = {
-                value: it.id,
-                text: `${it.accountNo} | ธนาคาร${it.bankName} | ชื่อบัญชี ${it.accountName}`,
+                value: response.data.id,
+                text: `${response.data.accountNo} | ${response.data.bankName} | ชื่อบัญชี ${response.data.accountName}`,
               };
 
               this.bankInformationOption.push(item);
-            }
+            // }
 
             console.log('bank => ', this.bankInformationOption);
           }
@@ -316,7 +319,6 @@ export default {
                       showConfirmButton: false,
                       timer: 3000,
                     }).then(() => {
-                      
                       this.$store.dispatch('products/clearOrder').then(() => {
                         this.$router.go();
                       });

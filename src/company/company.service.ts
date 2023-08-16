@@ -7,6 +7,9 @@ import { Repository } from 'typeorm';
 import { AddImageCompanyDto } from './dto/add.image.company.dto';
 import { CreateCompanyDto } from './dto/create.company.dto';
 import { UpdateCompanyDto } from './dto/update.company.dto';
+import { UpdateImageCompanyDto } from './dto/update.image.company.dto';
+var path = require('path')
+const fs = require('fs');
 
 @Injectable()
 export class CompanyService {
@@ -21,6 +24,34 @@ export class CompanyService {
             const company = await this.companyRepository.findOne({
                 where: {
                     id: id
+                },
+                relations: {
+                    image: true,
+                    event: true
+                }
+            });
+
+            for (const it of company.image) {
+                if(fs.existsSync(path.join(process.cwd(), it.src))){
+                    const contentBase64 = fs.readFileSync(path.join(process.cwd(), it.src), { encoding: 'base64' });
+                    it["base64Data"] = contentBase64
+                }else{
+                    it["base64Data"] = ""
+                }
+            }
+
+            return company;
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+    }
+
+    async getByName(name: string): Promise<Company> {
+        try {
+            const company = await this.companyRepository.findOne({
+                where: {
+                    name: name
                 },
                 relations: {
                     image: true,
@@ -45,38 +76,49 @@ export class CompanyService {
         return companies;
     }
 
-    async getWithEventsByURLName(urlName: string): Promise<Company> {
+    async getWithEventsByURLName(urlName: string): Promise<any> {
         try {
             const company = await this.companyRepository.findOne({
-                where: {
-                    urlName: urlName
-                },
-                select: {
-                    event: {
-                        id: true,
-                        name: true,
-                        image: true,
-                        targetPrice: true,
-                        status: true,
-                        eventDate: true,
-                        urlName: true
-                    }
-                },
                 relations: {
                     image: true,
-                    event: {
-                        image: true
-                    }
+                },
+                where: {
+                    urlName: urlName
+                }
+            });
+
+            if (!company) {
+                throw new HttpException('Company not found', HttpStatus.NOT_FOUND);
+            }
+
+            const event = await this.eventRepository.find({
+                relations: {
+                    company: true,
+                    image: true
+                },
+                where: {
+                    company: {
+                        id: company.id
+                    },
+                    status: Events.Status.Enabled
+                },
+                select: {
+                    id: true,
+                    name: true,
+                    image: true,
+                    targetPrice: true,
+                    status: true,
+                    eventDate: true,
+                    urlName: true
                 },
                 order: {
-                    event: {
-                        image: {
-                            id: "ASC"
-                        }
+                    image: {
+                        id: "ASC"
                     }
                 }
             });
 
+            company["event"] = event
             return company;
         } catch (error) {
             console.error(error);
@@ -153,6 +195,61 @@ export class CompanyService {
         const saved = await this.companyRepository.save(company);
         return saved;
 
+    }
+
+    async updateCompanyImage(dto: UpdateImageCompanyDto, file: Express.Multer.File): Promise<CompanyImage> {
+        let itemsEvent: Events[] = [];
+        const company = await this.companyRepository.findOne({
+            where: {
+                id: dto.companyId,
+            }
+        })
+        if (!company) {
+            throw new HttpException('Company not found', HttpStatus.NOT_FOUND);
+        }
+
+        const image = await this.companyImageRepository.findOne({
+            where: {
+                company: {
+                    id: company.id,
+                },
+                type: 2
+            }
+        });
+
+        if (image) {
+            const oldSrc = image.src;
+
+            fs.stat(oldSrc, (err, stats) => {
+                console.log("stats file image: ", stats);//here we got all information of file in stats variable
+             
+                if (err) {
+                    return console.error(err);
+                }
+             
+                fs.unlink(oldSrc,(err) => {
+                     if(err) return console.log(err);
+                     console.log('old image file deleted successfully');
+                });  
+             });
+
+            image.alt = file.originalname,
+            image.src = file.path,
+            image.type = 2
+
+            const saved = await this.companyImageRepository.save(image);
+            return saved;
+        }else{
+            const image = await this.companyImageRepository.create({
+                alt: file.originalname,
+                src: file.path,
+                type: 2,
+                company: company
+            })
+
+            const saved = await this.companyImageRepository.save(image);
+            return saved;
+        }
     }
 
     async createCompany(dto: CreateCompanyDto, file: Express.Multer.File): Promise<Company> {
@@ -243,7 +340,35 @@ export class CompanyService {
         }
 
         return await this.companyRepository.remove(company);
-        
+
+
+    }
+
+    async deleteImage(imageId: number): Promise<CompanyImage> {
+        const image = await this.companyImageRepository.findOne({
+            where: {
+                id: imageId
+            }
+        });
+        if (!image) {
+            throw new HttpException('Image not found', HttpStatus.NOT_FOUND);
+        }
+
+        fs.stat(`${image.src}`, (err, stats) => {
+            // console.log("stats file : ", stats);//here we got all information of file in stats variable
+
+            if (err) {
+                return console.error(err);
+            }
+
+            fs.unlink(`${image.src}`, (err) => {
+                if (err) return console.log(err);
+                console.log('image file deleted successfully');
+            });
+        });
+
+        return await this.companyImageRepository.remove(image);
+
 
     }
 }

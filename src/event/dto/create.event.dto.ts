@@ -1,7 +1,7 @@
 import { EventImage } from "src/entities/event.image.entity";
 
 export class CreateEventDto {
-    companyId: number;
+    companyName: string;
     name: string;
     eventDate: Date;
     targetPrice: number;

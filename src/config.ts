@@ -12,5 +12,6 @@ export default () => ({
         database: process.env.MYSQL_DATABASE || 'bansing_gogo_db',
         username: process.env.MYSQL_USER || 'root',
         password: process.env.MYSQL_PASSWORD || '123456' 
-    }
+    },
+    resetPasswordEmailUrl: process.env.RESET_PASSWORD_EMAIL_URL || 'http://localhost:3000/reset-password'
 });

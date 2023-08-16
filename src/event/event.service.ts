@@ -4,6 +4,7 @@ import { CompanyService } from 'src/company/company.service';
 import { Events } from 'src/entities/event.entity';
 import { EventImage } from 'src/entities/event.image.entity';
 import { OriginalDocument } from 'src/entities/original.document.entity';
+import { Register } from 'src/entities/register.entity';
 import { Repository } from 'typeorm';
 import { CreateEventDto } from './dto/create.event.dto';
 import { DeleteEventImageDto } from './dto/delete.event.image.dto';
@@ -96,10 +97,30 @@ export class EventService {
                 relations: {
                     image: true,
                     company: true,
-                    register: true
+                    register: {
+                        registerPayment: true
+                    }
+                },
+                order: {
+                    image: {
+                        id: "ASC"
+                    }
                 }
             });
 
+            if(!event){
+                throw new HttpException('Event not found', HttpStatus.NOT_FOUND);
+            }
+            for (const it of event.register) {
+                if (it.status == Register.Status.Uncomplete && it.registerPayment.length == 0) {
+                    if (new Date() > new Date(it.dueDate)) {
+                        it.status = Register.Status.Expired
+
+                        
+                    }
+                }
+            }
+            await this.eventRepository.save(event);
             return event;
         } catch (error) {
             console.error(error);
@@ -127,7 +148,7 @@ export class EventService {
     }
 
     async createEvent(dto: CreateEventDto, files: any): Promise<Events> {
-        const company = await this.companyService.get(dto.companyId);
+        const company = await this.companyService.getByName(dto.companyName);
         const foundSameUrlName = await this.eventRepository.findOneBy({
             urlName: dto.urlName
         });
@@ -206,7 +227,7 @@ export class EventService {
         let itemsDocument: OriginalDocument[] = [];
 
         if(dto.urlName){
-            if(dto.urlName != event.urlName){
+            if(dto.urlName !== event.urlName){
                 const foundSameUrlName = await this.eventRepository.findOneBy({
                     urlName: dto.urlName
                 });
@@ -341,6 +362,15 @@ export class EventService {
          });
 
         return await this.eventImageRepository.remove(eventImage);
+    }
+
+    async deleteEvent(eventId: number): Promise<Events> {
+        const event = await this.eventRepository.findOneBy({ id: eventId });
+        if (!event) {
+            throw new HttpException('event not found', HttpStatus.NOT_FOUND);
+        }
+
+        return await this.eventRepository.remove(event);
     }
 
 

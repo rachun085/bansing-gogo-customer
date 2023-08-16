@@ -5,7 +5,7 @@ const API_URL = `${apiConstants.baseURL}${apiConstants.bank_information}`;
 
 class BankInformationService {
   getAll() {
-    return axios.get(`${API_URL}/`);
+    return axios.get(`${API_URL}/get/all/customer`);
   }
 
 }

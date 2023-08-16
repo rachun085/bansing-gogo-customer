@@ -17,7 +17,7 @@ export class OriginalDocument extends BaseEntity {
     @Column({ name: 'status' })
     status: OriginalDocument.Status;
 
-    @ManyToOne(type => Events, event => event.originalDocument)
+    @ManyToOne(type => Events, event => event.originalDocument, { onDelete: 'CASCADE'})
     @JoinColumn({ name: "event_id" })
     event: Events;
 }

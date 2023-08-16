@@ -2,12 +2,16 @@ import { Body, Controller, Get, HttpException, HttpStatus, Param, Post, Req, Res
 import { Roles } from 'src/auth/auth.roles.decorator';
 import { RolesGuard } from 'src/auth/auth.roles.guard';
 import { JwtAuthGuard } from 'src/auth/jwt.auth.guard';
+import OrderSuccessDto from 'src/email-confirmation/dto/order.success.dto';
+import { EmailConfirmationService } from 'src/email-confirmation/email-confirmation.service';
 import { CreateRegisterDto } from './dto/create.register.dto';
 import { RegisterService } from './register.service';
 
 @Controller('register')
 export class RegisterController {
-    constructor(private registerService: RegisterService) {}
+    constructor(private registerService: RegisterService,
+        private emailConfirmationService: EmailConfirmationService
+        ) {}
 
     @UseGuards(JwtAuthGuard, RolesGuard)
     @Roles('ROLE_SUP', 'ROLE_ADMIN', 'ROLE_CUSTOMER')
@@ -25,6 +29,18 @@ export class RegisterController {
         try {
             console.log(`add register event [POST] /register`);
             const register = await this.registerService.createRegister(dto);
+
+            const payloadSendEmail: OrderSuccessDto = {
+                email: register.user.email,
+                registId: register.id,
+                amountOwnership: register.amountOwnership,
+                totalPrice: register.totalPrice,
+                fullName: `${register.user.firstName} ${register.user.lastName}`,
+                registDate: String(register.createdAt),
+                eventName: register.event.name
+            }
+            await this.emailConfirmationService.sendMailOrderSuccess(payloadSendEmail);
+
             const response = {
                 status: "success",
                 data: register

@@ -42,5 +42,6 @@ export namespace Register {
     export enum Status {
         Complete = "COMPLETE",
         Uncomplete = "UNCOMPLETE",
+        Expired = "EXPIRED"
     }
 }

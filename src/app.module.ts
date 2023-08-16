@@ -39,6 +39,7 @@ import { EmailConfirmationController } from './email-confirmation/email-confirma
 import { DocumentModule } from './document/document.module';
 import { memoryStorage } from 'multer';
 import { SettingModule } from './setting/setting.module';
+import { EmailConfirmationModule } from './email-confirmation/email-confirmation.module';
 
 @Module({
   
@@ -63,10 +64,10 @@ import { SettingModule } from './setting/setting.module';
     MulterModule.register({
       storage: memoryStorage()
     }),
-    SettingModule
+    SettingModule,
   ],
   controllers: [AppController, UserController, CompanyController, RegisterController, RegisterPaymentController, DocumentController, LogController, EmailConfirmationController],
-  providers: [AppService, UserService, CompanyService, RegisterService, RegisterPaymentService, DocumentService, LogService, RoleService, MailService, EmailConfirmationService, JwtService],
+  providers: [AppService, UserService, CompanyService, RegisterService, RegisterPaymentService, DocumentService, LogService, RoleService, MailService, JwtService, EmailConfirmationService],
 })
 export class AppModule {
   @Inject()

@@ -1,4 +1,4 @@
-import { HttpException, HttpStatus, Inject, Injectable, InternalServerErrorException, UnauthorizedException } from '@nestjs/common';
+import { BadRequestException, HttpException, HttpStatus, Inject, Injectable, InternalServerErrorException, UnauthorizedException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Role } from 'src/entities/role.entity';
 import { User } from 'src/entities/user.entity';
@@ -11,6 +11,9 @@ import * as crypto from 'crypto';
 import { ConfigService } from '@nestjs/config';
 import { UpdateUserDto } from './dto/update.user.dto';
 import { check } from 'prettier';
+import ConfirmResetPasswordDto from 'src/auth/dto/comfirm.reset.password.dto';
+import ResetPasswordDto from 'src/email-confirmation/dto/reset.password.dto';
+// import { EmailConfirmationService } from 'src/email-confirmation/email-confirmation.service';
 const Hashids = require('hashids/cjs');
 
 @Injectable()
@@ -18,7 +21,8 @@ export class UserService {
     constructor(
         @InjectRepository(User) private usersRepository: Repository<User>,
         @InjectRepository(Role) private rolesRepository: Repository<Role>,
-        @InjectRepository(ResetPasswordToken) private resetPasswordTokenRepository: Repository<ResetPasswordToken>
+        @InjectRepository(ResetPasswordToken) private resetPasswordTokenRepository: Repository<ResetPasswordToken>,
+        // private readonly emailConfirmationService: EmailConfirmationService
     ) { }
 
     @Inject()
@@ -113,6 +117,23 @@ export class UserService {
         return hash;
     }
 
+    async validateContractPassword(password: string, userId: number){
+        const user = await this.usersRepository.findOneBy({id: userId});
+        if(!user){
+            throw new HttpException('User not found', HttpStatus.NOT_FOUND);
+        }
+
+        if (bcrypt.compareSync(password, user.password)) {
+            return {
+                status: "true"
+            }
+        }else{
+            return {
+                status: "false"
+            }
+        }
+    }
+
 
     async findAll(user?: User): Promise<any> {
         const users = await this.usersRepository.find({
@@ -154,7 +175,7 @@ export class UserService {
         // change password
         if (dto.currentPassword != null && dto.newPassword != null && dto.confirmNewPassword != null) {
             const compare = await this.comparePassword(dto.currentPassword, found.password);
-            if(!compare) throw new HttpException('Current password is incorrect.', HttpStatus.FORBIDDEN);
+            if (!compare) throw new HttpException('Current password is incorrect.', HttpStatus.FORBIDDEN);
 
             const validatedPassword = await this.validatePassword(dto.newPassword, dto.confirmNewPassword)
 
@@ -167,12 +188,12 @@ export class UserService {
         found.lastName = dto.lastName;
         found.cardId = dto.cardId;
         found.phoneNumber = dto.phoneNumber;
-        if(dto.status){
+        if (dto.status) {
             found.status = dto.status == 'ENABLED' ? User.Status.Enabled : dto.status == "DISABLED" ? User.Status.Disabled : dto.status == "NOT_CONFIRMED" ? User.Status.NotConfirmed : User.Status.Disabled
-        }else{
+        } else {
             found.status = found.status;
         }
-        
+
 
         const savedUser = await this.usersRepository.save(found);
         return savedUser;
@@ -203,10 +224,10 @@ export class UserService {
         return token;
     }
 
-    async requestResetPassword(email: string): Promise<ResetPasswordToken> {
+    async requestResetPassword(email: string): Promise<any> {
         const user = await this.getByEmail(email);
         if (!user) {
-            throw new Error('User is not found');
+            throw new HttpException('User not found', HttpStatus.NOT_FOUND);
         }
 
         if (user.resetPasswordToken != null) {
@@ -224,28 +245,21 @@ export class UserService {
         resetPassword.user = user;
         const saved = await this.resetPasswordTokenRepository.save(resetPassword);
 
-        //TODO: send mail (call mail.service.ts)
+        let url = `${this.configService.get<string>(
+            'resetPasswordEmailUrl',
+        )}?token=${token}`;
 
-        // let url = `${this.configService.get<string>(
-        //   'resetPasswordBaseUrl',
-        // )}/${token}`;
-
-        // await this.scheduleService.sendResetPasswordEmailNow({
-        //   email: email,
-        //   url: url,
-        //   lang: lang,
-        // });
-        return saved;
+        // await this.emailConfirmationService.sendMailResetPassword(payloadSendEmail);
+        return {
+            data: saved,
+            url: url
+        };
     }
 
-    async resetPassword(
-        newPwd: string,
-        cfNewPwd: string,
-        tokenId: string,
-    ): Promise<User> {
+    async resetPassword(dto: ConfirmResetPasswordDto): Promise<User> {
         const found = await this.resetPasswordTokenRepository.findOne({
             where: {
-                token: tokenId
+                token: dto.tokenId
             },
             relations: {
                 user: true
@@ -255,7 +269,7 @@ export class UserService {
             throw new UnauthorizedException('Token not found');
         }
 
-        const validPassword = await this.validatePassword(newPwd, cfNewPwd);
+        const validPassword = await this.validatePassword(dto.newPwd, dto.cfNewPwd);
         if (!validPassword) {
             throw new UnauthorizedException('Invalid password');
         }
@@ -311,11 +325,38 @@ export class UserService {
     async markEmailAsConfirmed(email: string) {
         const update = this.usersRepository.update({ email }, {
             status: User.Status.Enabled
-          });
-          if(update){
+        });
+        if (update) {
             return "email has confirmed";
-          }
-        
-      }
+        }
+
+    }
+
+    async findToken(tokenId: string) {
+        const foundToken = await this.resetPasswordTokenRepository.findOneBy({ token: tokenId });
+        if (!foundToken) {
+            const response = {
+                status: 'fail',
+                data: 'token not found'
+            }
+
+            return response;
+        }
+
+        if(new Date() > new Date(foundToken.expiredAt)){
+            const response = {
+                status: 'expired',
+                data: 'token was expired'
+            }
+
+            return response;
+        } 
+
+        return {
+            status: 'success',
+            data: 'found token'
+        }
+
+    }
 
 }

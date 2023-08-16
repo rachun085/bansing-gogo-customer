@@ -64,6 +64,12 @@
                       <span class="validate-error">{{ errors[0] }}</span>
                     </ValidationProvider>
                   </div>
+                  <div class="form-group text-right text-danger">
+                    <nuxt-link :to="{ path: '/page/account/forget-password'}" >
+                  ลืมรหัสผ่าน?
+                </nuxt-link>
+                  </div>
+                  
                   <button
                     type="submit"
                     class="btn btn-solid"

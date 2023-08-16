@@ -110,9 +110,9 @@
               <div class="col-sm-12 payment-mode">
                 <h4 class="text-danger">รายละเอียดการชำระเงิน</h4>
                 <div class="delivery-sec">
-                  <h3 class="text-primary">ธนาคารกรุงเทพ</h3>
-                  <h3>เลขที่บัญชี 666-4-3434-23</h3>
-                  <h3>ชื่อบัญชี บริษัท สิงห์ มิวสิค มีเดีย จำกัด</h3>
+                  <h3 class="text-primary">{{bankName}}</h3>
+                  <h3>เลขที่บัญชี {{accountNo}}</h3>
+                  <h3>ชื่อบัญชี {{accountName}}</h3>
                 </div>
               </div>
               <div class="col-md-12">
@@ -141,6 +141,7 @@ import { mapGetters } from 'vuex';
 import Header from '../../components/header/header1';
 import Footer from '../../components/footer/footer1';
 import moment from 'moment';
+import BankInformationService from '../../src/services/bank-information/bank.information.service';
 moment.locale('th');
 
 export default {
@@ -167,10 +168,19 @@ export default {
       ],
     };
   },
+  data() {
+    return {
+      bankName: null,
+      accountNo: null,
+      accountName: null
+    };
+  },
   mounted() {
     if (!this.order) {
       this.$router.push('/');
     }
+    this.getBankInformation();
+    console.log("order : ", this.order);
   },
   methods: {
     getImgUrl(path) {
@@ -182,6 +192,22 @@ export default {
     },
     formatDate(date, format = 'LL') {
       return moment(date).add(543, 'year').format(format);
+    },
+    getBankInformation() {
+      BankInformationService.getAll().then(
+        (response) => {
+          if (response.data) {
+            this.accountName = response.data.accountName;
+            this.accountNo = response.data.accountNo;
+          this.bankName = response.data.bankName
+
+            console.log('bank => ', response.data);
+          }
+        },
+        (error) => {
+          console.log('error fetch get bank information : ', error);
+        },
+      );
     },
   },
 };

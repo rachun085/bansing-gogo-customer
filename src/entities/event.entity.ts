@@ -46,10 +46,10 @@ export class Events extends BaseEntity {
     @OneToMany(type => EventImage, image => image.event, { cascade: ['insert', 'update', 'remove', 'recover'] })
     image: EventImage[];
 
-    @OneToMany(type => Register, register => register.event, { cascade: ['insert', 'update', 'remove', 'recover'] })
+    @OneToMany(type => Register, register => register.event, { cascade: ['insert', 'update', 'recover'] })
     register: Register[];
 
-    @OneToMany(type => OriginalDocument, originalDocument => originalDocument.event, { cascade: ['insert', 'update', 'recover'] })
+    @OneToMany(type => OriginalDocument, originalDocument => originalDocument.event, { cascade: ['insert', 'update', 'recover', 'remove'] })
     originalDocument: OriginalDocument[];
 }
 

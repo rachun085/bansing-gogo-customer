@@ -9,7 +9,7 @@
     <!-- <Product :products="products" :category="category" /> -->
     <!-- <Instagram /> -->
     <Footer />
-    <quickviewModel
+    <!-- <quickviewModel
       :openModal="showquickviewmodel"
       :productData="quickviewproduct"
     />
@@ -24,8 +24,8 @@
       @closeCart="closeCartModal"
       :products="products"
       :category="category"
-    />
-    <newsletterModel />
+    /> -->
+    <!-- <newsletterModel /> -->
   </div>
 </template>
 

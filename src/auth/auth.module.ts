@@ -15,7 +15,6 @@ import { MailService } from 'src/mail/mail.service';
 
 @Module({
     imports: [
-        // UserModule, 
         PassportModule,
         JwtModule.register({}),
         PassportModule.register({ session: true }),
