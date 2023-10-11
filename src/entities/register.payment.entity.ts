@@ -16,6 +16,9 @@ export class RegisterPayment extends BaseEntity {
     @Column({ name: 'price', type: 'int'})
     price: number;
 
+    @Column({ name: 'price_text', type: 'text', nullable: true })
+    priceText: string;
+
     @Column({ name: 'slip_src', type: 'text'})
     slipSrc: string;
 

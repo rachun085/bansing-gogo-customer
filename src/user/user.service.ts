@@ -300,10 +300,20 @@ export class UserService {
         }
 
         let user: User = await this.usersRepository.create(dto);
+        user.titleName = dto.titleName;
         user.email = dto.email;
         user.firstName = dto.firstName;
         user.lastName = dto.lastName;
         user.phoneNumber = dto.phoneNumber;
+        user.addressNo = dto.addressNo;
+        user.street = dto.street;
+        user.soi = dto.soi;
+        user.moo = dto.moo;
+        user.tumbon = dto.tumbon;
+        user.amphoe = dto.amphoe;
+        user.province = dto.province;
+        user.zipCode = dto.zipCode;
+        user.cardId = dto.cardId;
         user.password = validatePassword;
         user.status = dto.role == 'admin' ? User.Status.Enabled : User.Status.NotConfirmed
 

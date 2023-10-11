@@ -36,6 +36,9 @@ export class Events extends BaseEntity {
     @Column({ name: 'url_name', type: 'text'})
     urlName: string;
 
+    @Column({ name: 'share_percentage', type: 'int', nullable: true })
+    sharePercentage: number;
+
     @Column({ name: 'status' })
     status: Events.Status;
 

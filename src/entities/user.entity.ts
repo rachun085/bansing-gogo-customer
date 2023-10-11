@@ -18,6 +18,9 @@ export class User extends BaseEntity {
     @Column({ name: 'password', type: 'text' })
     password: string;
 
+    @Column({ name: 'title_name' })
+    titleName: User.TitleName;
+
     @Column({ name: 'first_name', type: 'text', nullable: true })
     firstName: string;
 
@@ -29,6 +32,30 @@ export class User extends BaseEntity {
 
     @Column({ name: 'card_id', type: 'text', nullable: true })
     cardId: string;
+
+    @Column({ name: 'address_no', type: 'text', nullable: true })
+    addressNo: string;
+
+    @Column({ name: 'moo', type: 'text', nullable: true })
+    moo: string;
+
+    @Column({ name: 'soi', type: 'text', nullable: true })
+    soi: string;
+
+    @Column({ name: 'street', type: 'text', nullable: true })
+    street: string;
+
+    @Column({ name: 'tumbon', type: 'text', nullable: true })
+    tumbon: string;
+
+    @Column({ name: 'amphoe', type: 'text', nullable: true })
+    amphoe: string;
+
+    @Column({ name: 'province', type: 'text', nullable: true })
+    province: string;
+
+    @Column({ name: 'zip_code', type: 'text', nullable: true })
+    zipCode: string;
 
     @Column({ name: 'status' })
     status: User.Status;
@@ -55,5 +82,11 @@ export namespace User {
         Enabled = "ENABLED",
         Disabled = "DISABLED",
         NotConfirmed = "NOT_CONFIRMED"
+    }
+
+    export enum TitleName {
+        Mr = "นาย",
+        Mrs = "นาง",
+        Miss = "นางสาว"
     }
 }

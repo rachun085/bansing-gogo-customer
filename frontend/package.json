@@ -54,6 +54,8 @@
     "vue-slider-component": "3.2.15",
     "vue-spinner": "^1.0.4",
     "vue-spinners": "^1.0.2",
+    "vue-thai-address-input": "^0.2.1",
+    "vue-thailand-address-autocomplete": "^0.1.1",
     "vue2-animate": "^2.1.4",
     "vue2-datepicker": "^3.11.1",
     "vue2-filters": "^0.14.0",

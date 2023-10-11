@@ -14,8 +14,20 @@ export class Register extends BaseEntity {
     @Column({ name: 'amount_ownership', type: 'int'})
     amountOwnership: number;
 
-    @Column({ name: 'totalPrice', type: 'int' })
+    @Column({ name: 'total_price', type: 'int' })
     totalPrice: number;
+
+    @Column({ name: 'total_price_text', type: 'text', nullable: true })
+    totalPriceText: string;
+
+    @Column({ name: 'share_price', type: 'int' })
+    sharePrice: number;
+
+    @Column({ name: 'share_price_text', type: 'text', nullable: true })
+    sharePriceText: string;
+
+    @Column({ name: 'share_percentage', type: 'int', nullable: true })
+    sharePercentage: number;
 
     @Column({ name: 'status' })
     status: Register.Status;
