@@ -20,7 +20,7 @@ export class Register extends BaseEntity {
     @Column({ name: 'total_price_text', type: 'text', nullable: true })
     totalPriceText: string;
 
-    @Column({ name: 'share_price', type: 'int' })
+    @Column({ name: 'share_price', type: 'int', nullable: true })
     sharePrice: number;
 
     @Column({ name: 'share_price_text', type: 'text', nullable: true })

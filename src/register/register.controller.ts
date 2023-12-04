@@ -30,6 +30,7 @@ export class RegisterController {
             console.log(`add register event [POST] /register`);
             const register = await this.registerService.createRegister(dto);
 
+            // send mail after create register to customer
             const payloadSendEmail: OrderSuccessDto = {
                 email: register.user.email,
                 registId: register.id,
@@ -47,6 +48,7 @@ export class RegisterController {
             }
             res.send(response);
             return response;
+            
         } catch (error) {
             console.log("error from [POST] /register => ", error);
             throw new HttpException({

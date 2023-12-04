@@ -168,6 +168,7 @@ export class EventService {
         event.eventDate = dto.eventDate;
         event.targetPrice = dto.targetPrice;
         event.ownership = dto.ownership;
+        event.sharePercentage = dto.sharePercentage;
         event.pricePerOwnership = dto.pricePerOwnership;
         event.shortDescription = dto.shortDescription;
         event.description = dto.description;
@@ -242,6 +243,7 @@ export class EventService {
         event.eventDate = dto.eventDate;
         event.targetPrice = dto.targetPrice;
         event.ownership = dto.ownership;
+        event.sharePercentage = dto.sharePercentage;
         event.pricePerOwnership = dto.pricePerOwnership;
         event.shortDescription = dto.shortDescription;
         event.description = dto.description;

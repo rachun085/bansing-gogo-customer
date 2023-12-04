@@ -6,6 +6,7 @@ export class CreateEventDto {
     eventDate: Date;
     targetPrice: number;
     ownership: number;
+    sharePercentage: number;
     pricePerOwnership: number;
     shortDescription: string;    
     description: string;

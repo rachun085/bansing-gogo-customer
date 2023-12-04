@@ -1,0 +1,42 @@
+version: "3.3"
+networks:
+  default:
+    driver: bridge
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: bansing_gogo_db
+      MYSQL_ROOT_USER: root
+      MYSQL_PASSWORD: 123456
+    ports:
+      - "3306:3306"
+    networks:
+      - default
+    healthcheck:
+      test: mysqladmin ping -h mysql --user=$$MYSQL_ROOT_USER --password=$$MYSQL_ROOT_PASSWORD
+      interval: 30s
+      timeout: 12s
+      retries: 10
+
+  bansing-gogo-backend:
+    image: backend-bansing-gogo
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "4000:4000"
+    networks:
+      - default
+    depends_on:
+      mysql:
+        condition: service_healthy
+    volumes:
+      - ./scripts:/home/node/scripts
+    command: ["/home/node/scripts/wait-for.sh", "mysql:3306", "--", "npm", "run", "start:prod"]
+    

@@ -114,11 +114,15 @@ export class RegisterService {
             throw new HttpException('User not found', HttpStatus.NOT_FOUND);
         }
 
+        const sharePercentage = event.sharePercentage;
         const totalPrice = event.pricePerOwnership * dto.amountOwnership;
+        const totalPriceText = await this.arabicNumberToText(totalPrice);
 
         const register = this.registerRepository.create({
             amountOwnership: dto.amountOwnership,
             totalPrice: totalPrice,
+            totalPriceText: totalPriceText,
+            sharePercentage: sharePercentage,
             status: Register.Status.Uncomplete,
             dueDate: date.toISOString()
         })
@@ -171,7 +175,6 @@ export class RegisterService {
 
                     registerData.push(item)
                 }
-
             }
 
             await this.registerRepository.save(register);
@@ -206,7 +209,7 @@ export class RegisterService {
 
             if (register.length > 0) {
                 for (const it of register) {
-                    
+
                     let item = {
                         id: it.id,
                         createdAt: it.createdAt,
@@ -224,31 +227,38 @@ export class RegisterService {
                         // }
                     }
 
-                    if(it.document.length > 0){
+                    if (it.document.length > 0) {
                         const document = {
                             id: it.document[0].id,
                             createdAt: it.document[0].createdAt,
                             editNo: it.document[0].editNo
                         }
-                        if(fs.existsSync(path.join(process.cwd(), `/frontend/assets/documents/${it.document[0].fileName}`))){
+                        if (fs.existsSync(path.join(process.cwd(), `/frontend/assets/documents/${it.document[0].fileName}`))) {
                             const docContentBase64 = fs.readFileSync(path.join(process.cwd(), `/frontend/assets/documents/${it.document[0].fileName}`), { encoding: 'base64' });
                             document["fileData"] = docContentBase64
-                        }else{
+                        } else {
                             document["fileData"] = ""
                         }
-                        
+
                         item["document"] = document
                     }
-                    
+
 
                     registerData.push(item)
                 }
+
+                const result = {
+                    data: registerData,
+                    user: register[0].user
+                }
+
+                return result;
 
             }
 
             const result = {
                 data: registerData,
-                user: register[0].user
+                user: {}
             }
 
             return result;
@@ -260,5 +270,84 @@ export class RegisterService {
 
     async toBase64(data: string): Promise<any> {
         return Buffer.from(data).toString('base64');
+    }
+
+    async checkNumber(Number) {
+        var decimal = false;
+        Number = Number.toString();
+        Number = Number.replace(/ |,|บาท|฿/gi, '');
+        for (var i = 0; i < Number.length; i++) {
+            if (Number[i] == '.') {
+                decimal = true;
+            }
+        }
+        if (decimal == false) {
+            Number = Number + '.00';
+        }
+        return Number
+    }
+
+    async arabicNumberToText(num): Promise<any> {
+        var Number = await this.checkNumber(num);
+        var NumberArray = new Array("ศูนย์", "หนึ่ง", "สอง", "สาม", "สี่", "ห้า", "หก", "เจ็ด", "แปด", "เก้า", "สิบ");
+        var DigitArray = new Array("", "สิบ", "ร้อย", "พัน", "หมื่น", "แสน", "ล้าน");
+        var BahtText = "";
+        var DecimalLen;
+
+        if (isNaN(Number)) {
+            return "ข้อมูลนำเข้าไม่ถูกต้อง";
+        } else {
+            if ((Number - 0) > 9999999.9999) {
+                return "ข้อมูลนำเข้าเกินขอบเขตที่ตั้งไว้";
+            } else {
+                Number = Number.split(".");
+                if (Number[1].length > 0) {
+                    Number[1] = Number[1].substring(0, 2);
+                }
+                var NumberLen = Number[0].length - 0;
+                for (var i = 0; i < NumberLen; i++) {
+                    var tmp = Number[0].substring(i, i + 1) - 0;
+                    if (tmp != 0) {
+                        if ((i == (NumberLen - 1)) && (tmp == 1)) {
+                            BahtText += "เอ็ด";
+                        } else
+                            if ((i == (NumberLen - 2)) && (tmp == 2)) {
+                                BahtText += "ยี่";
+                            } else
+                                if ((i == (NumberLen - 2)) && (tmp == 1)) {
+                                    BahtText += "";
+                                } else {
+                                    BahtText += NumberArray[tmp];
+                                }
+                        BahtText += DigitArray[NumberLen - i - 1];
+                    }
+                }
+                BahtText += "บาท";
+                if ((Number[1] == "0") || (Number[1] == "00")) {
+                    BahtText += "ถ้วน";
+                } else {
+                    DecimalLen = Number[1].length - 0;
+                    for (var i = 0; i < DecimalLen; i++) {
+                        var tmp = Number[1].substring(i, i + 1) - 0;
+                        if (tmp != 0) {
+                            if ((i == (DecimalLen - 1)) && (tmp == 1)) {
+                                BahtText += "เอ็ด";
+                            } else
+                                if ((i == (DecimalLen - 2)) && (tmp == 2)) {
+                                    BahtText += "ยี่";
+                                } else
+                                    if ((i == (DecimalLen - 2)) && (tmp == 1)) {
+                                        BahtText += "";
+                                    } else {
+                                        BahtText += NumberArray[tmp];
+                                    }
+                            BahtText += DigitArray[DecimalLen - i - 1];
+                        }
+                    }
+                    BahtText += "สตางค์";
+                }
+                return BahtText;
+            }
+        }
     }
 }
