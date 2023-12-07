@@ -7,11 +7,11 @@ export default () => ({
     emailExpirationTime: process.env.EMAIL_EXPIRATION_TIME || 600000 , 
     port: process.env.APP_PORT ? parseInt(process.env.APP_PORT, 10) : 4000,
     mysql: {
-        host: process.env.MYSQL_HOST || 'localhost',
+        host: process.env.MYSQL_HOST || 'node55354-env-6308327.proen.app.ruk-com.cloud',
         port: process.env.MYSQL_PORT ? parseInt(process.env.MYSQL_PORT, 10) : 3306,
         database: process.env.MYSQL_DATABASE || 'bansing_gogo_db',
         username: process.env.MYSQL_USER || 'root',
-        password: process.env.MYSQL_PASSWORD || '123456' 
+        password: process.env.MYSQL_PASSWORD || 'bansing_gogo' 
     },
     resetPasswordEmailUrl: process.env.RESET_PASSWORD_EMAIL_URL || 'http://localhost:3000/reset-password'
 });

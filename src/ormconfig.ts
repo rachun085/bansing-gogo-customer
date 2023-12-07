@@ -7,7 +7,7 @@ const mysql = config().mysql;
 const TypeOrmConfig: ConnectionOptions = {
     type: 'mysql',
     host: mysql.host,
-    port: mysql.port,
+    // port: mysql.port,
     username: mysql.username,
     password: mysql.password,
     database: mysql.database,
