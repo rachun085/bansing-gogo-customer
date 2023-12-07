@@ -7,7 +7,7 @@ export default () => ({
     emailExpirationTime: process.env.EMAIL_EXPIRATION_TIME || 600000 , 
     port: process.env.APP_PORT ? parseInt(process.env.APP_PORT, 10) : 4000,
     mysql: {
-        host: process.env.MYSQL_HOST || 'node55354-env-6308327.proen.app.ruk-com.cloud',
+        host: process.env.MYSQL_HOST || '10.104.3.185',
         port: process.env.MYSQL_PORT ? parseInt(process.env.MYSQL_PORT, 10) : 3306,
         database: process.env.MYSQL_DATABASE || 'bansing_gogo_db',
         username: process.env.MYSQL_USER || 'root',
