@@ -207,10 +207,11 @@ export default {
       }
     },
     async resendConfirmationEmail() {
+      const baseURLBackend = '10.104.8.251:4000'
       // this.loading = true;
       const uninterceptedAxiosInstance = axios.create();
       const response = await uninterceptedAxiosInstance.post(
-        'http://localhost:4000/email-confirmation/resend-confirmation-link',
+        `http://${baseURLBackend}/email-confirmation/resend-confirmation-link`,
         { email: this.email },
       );
       console.log('response : ', response.data);

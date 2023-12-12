@@ -1,5 +1,5 @@
 export const apiConstants = {
-    baseURL: "http://localhost:4000/",
+    baseURL: "10.104.8.251:4000/",
     login: "auth/login",
     register: "auth/register",
     user: "user",

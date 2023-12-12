@@ -3,9 +3,13 @@ const { merge } = require('webpack-merge')
 const pdfjsConfig = require('./pdfjs.config')
 
 export default {
+  server: {
+    port: 3000, // default: 3000
+    host: '0' // default: localhost
+  },
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
-    baseUrlBackend: process.env.BASE_URL_BACKEND || 'http://localhost:4000'
+    baseUrl: process.env.BASE_URL || '10.104.11.171:3000',
+    baseUrlBackend: process.env.BASE_URL_BACKEND || '10.104.8.251:4000'
   },
   ssr: false,
   subdirectory: '/multikart',
