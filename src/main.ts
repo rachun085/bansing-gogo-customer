@@ -20,6 +20,7 @@ async function bootstrap() {
 
   app.enableCors({
     origin: [
+      'http://frontend-bansing-gogo.proen.app.ruk-com.cloud',
       'http://10.104.11.171:3000',
       'https://10.104.11.171:3000',
       'http://localhost:3000',
