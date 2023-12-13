@@ -8,7 +8,7 @@ const baseURL = process.env.BASE_URL_BACKEND;
 const URLRefreshToken = '/auth/refresh';
 
 const axiosInstance = axios.create({
-  baseURL: '10.104.8.251:4000',
+  baseURL: baseURL,
   headers: {
     'Content-Type': 'application/json',
   },

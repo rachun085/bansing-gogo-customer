@@ -2,7 +2,7 @@ import axios from 'axios';
 import authHeader from './auth-header';
 import { apiConstants } from '../constrants/const';
 
-const API_URL = `${apiConstants.baseURL}${apiConstants.user}`;
+const API_URL = `${apiConstants.baseURL}/${apiConstants.user}`;
 
 class UserService {
   getAllUser() {
@@ -23,14 +23,6 @@ class UserService {
   validateContractPassword(payload){
     return axios.post(`${API_URL}/validate-contract-password`, payload);
   }
-
-//   getModeratorBoard() {
-//     return axios.get(API_URL + 'mod', { headers: authHeader() });
-//   }
-
-//   getAdminBoard() {
-//     return axios.get(API_URL + 'admin', { headers: authHeader() });
-//   }
 }
 
 export default new UserService();

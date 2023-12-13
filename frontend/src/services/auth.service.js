@@ -9,7 +9,7 @@ const registerURL = apiConstants.register
 class AuthService {
   async login(user) {
     const loginAxios =  axios.create();
-    return loginAxios.post(`${baseURL}${loginURL}`, {
+    return loginAxios.post(`${baseURL}/${loginURL}`, {
         email: user.email,
         password: user.password
       })
