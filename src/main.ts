@@ -18,17 +18,17 @@ async function bootstrap() {
   );
   const configService = app.get(ConfigService)
 
-  app.enableCors({
-    origin: [
-      'http://frontend-bansing-gogo.proen.app.ruk-com.cloud',
-      'http://10.104.11.171:3000',
-      'https://10.104.11.171:3000',
-      'http://localhost:3000',
-      'http://localhost:8888',
-    ],
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-    credentials: true,
-  });
+  // app.enableCors({
+  //   origin: [
+  //     'http://frontend-bansing-gogo.proen.app.ruk-com.cloud',
+  //     'http://10.104.11.171:3000',
+  //     'https://10.104.11.171:3000',
+  //     'http://localhost:3000',
+  //     'http://localhost:8888',
+  //   ],
+  //   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+  //   credentials: true,
+  // });
 
   app.use(session({
     secret: 'banSingGoGo@_',
