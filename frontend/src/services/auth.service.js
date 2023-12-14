@@ -31,7 +31,7 @@ class AuthService {
 
   async register(user) {
     const uninterceptedAxiosInstance = axios.create();
-    const callApiRegister = await uninterceptedAxiosInstance.post(`${baseURL}auth/register`,user)
+    const callApiRegister = await uninterceptedAxiosInstance.post(`${baseURL}/auth/register`,user)
     if(callApiRegister){
         console.log("call api register -> ", callApiRegister.data);
         return callApiRegister.data;
