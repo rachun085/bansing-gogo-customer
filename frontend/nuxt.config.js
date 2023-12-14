@@ -73,7 +73,7 @@ export default {
     proxy: true
   },
   proxy: {
-    "/api": "http://10.104.8.251:4000"
+    '/api/': { target: "http://10.104.8.251:4000", pathRewrite: {'^/api/': ''} }
   },
   generate: {
     fallback: true
