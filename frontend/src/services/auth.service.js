@@ -9,7 +9,7 @@ const registerURL = apiConstants.register
 class AuthService {
   async login(user) {
     const loginAxios =  axios.create();
-    return loginAxios.post('/login', {
+    return loginAxios.post(`/api/${loginURL}`, {
         email: user.email,
         password: user.password
       })
@@ -31,7 +31,7 @@ class AuthService {
 
   async register(user) {
     const uninterceptedAxiosInstance = axios.create();
-    const callApiRegister = await uninterceptedAxiosInstance.post(`${baseURL}/auth/register`,user)
+    const callApiRegister = await uninterceptedAxiosInstance.post(`/api/auth/register`,user)
     if(callApiRegister){
         console.log("call api register -> ", callApiRegister.data);
         return callApiRegister.data;

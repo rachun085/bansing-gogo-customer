@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { apiConstants } from '../../constrants/const';
 
-const API_URL = `${apiConstants.baseURL}${apiConstants.bank_information}`;
+const API_URL = `/api/${apiConstants.bank_information}`;
 
 class BankInformationService {
   getAll() {

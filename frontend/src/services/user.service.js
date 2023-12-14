@@ -2,7 +2,8 @@ import axios from 'axios';
 import authHeader from './auth-header';
 import { apiConstants } from '../constrants/const';
 
-const API_URL = `${apiConstants.baseURL}/${apiConstants.user}`;
+// const API_URL = `${apiConstants.baseURL}/${apiConstants.user}`;
+const API_URL = '/api/user'
 
 class UserService {
   getAllUser() {

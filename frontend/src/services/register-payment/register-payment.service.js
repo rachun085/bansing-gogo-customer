@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { apiConstants } from '../../constrants/const';
 
-const API_URL = `${apiConstants.baseURL}${apiConstants.register_payment}`;
+const API_URL = `/api/${apiConstants.register_payment}`;
 
 class RegisterPaymentService {
   async createRegisterPayment(formData) {

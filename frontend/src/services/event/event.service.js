@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { apiConstants } from '../../constrants/const';
 
-const API_URL = `${apiConstants.baseURL}${apiConstants.event}`;
+const API_URL = `/api/${apiConstants.event}`;
 
 class EventService {
   async getEventByURL(eventURL) {

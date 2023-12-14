@@ -73,7 +73,7 @@ export default {
     proxy: true
   },
   proxy: {
-    "/login": "http://10.104.8.251:4000/auth/login"
+    "/api": "http://10.104.8.251:4000"
   },
   generate: {
     fallback: true
