@@ -70,6 +70,10 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    proxy: true
+  },
+  proxy: {
+    "/login": "http://10.104.8.251:4000/auth/login"
   },
   generate: {
     fallback: true

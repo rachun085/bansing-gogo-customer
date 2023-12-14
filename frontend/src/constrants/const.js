@@ -1,5 +1,5 @@
 export const apiConstants = {
-    baseURL: "http://node55351-env-6308327.proen.app.ruk-com.cloud",
+    baseURL: "http://10.104.8.251:4000",
     login: "auth/login",
     register: "auth/register",
     user: "user",
