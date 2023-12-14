@@ -74,7 +74,7 @@ export default {
   },
   methods: {
     async confirmationEmail(){
-      const response = await axios.post('http://localhost:4000/email-confirmation/confirm', {token : this.$route.query.token});
+      const response = await axios.post('/api/email-confirmation/confirm', {token : this.$route.query.token});
       console.log("response : ", response.data);
       if(response.data.statusCode == 200){
         this.text = "success";
